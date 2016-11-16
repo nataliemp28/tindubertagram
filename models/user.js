@@ -2,9 +2,14 @@ const mongoose  = require('mongoose');
 const bcrypt    = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
-  username: { type: String, unique: true, required: true },
   email: { type: String, unique: true, required: true },
-  passwordHash: { type: String }
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  bio: { type: String, minlength: 5, maxlength: 140, required: true },
+  facebookId: { type: String, unique: true },
+  instagramId: { type: String, unique: true },
+  passwordHash: { type: String },
+  following: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
 });
 
 function setPassword(value){
