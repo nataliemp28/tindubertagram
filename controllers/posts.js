@@ -2,15 +2,15 @@ const Post = require('../models/post');
 
 // find all from my userId and followers userId
 
-function postsPublicFeed(req, res, currentUser) { // Public Feed
-  Post.find(({ userId: currentUser._id || currentUser.following }), (err, posts) => {
+function postsPublicFeed(req, res) { // Public Feed
+  Post.find(({ userId: req.body.currentUser._id || req.body.currentUser.following }), (err, posts) => {
     if (err) return res.stauts(500).json({error: err});
     return res.json(posts);
   });
 }
 
-function postsPrivateFeed(req, res, currentUser) { // Personal
-  Post.find(({ userId: currentUser._id }), (err, posts) => {
+function postsPrivateFeed(req, res) { // Personal
+  Post.find(({ userId: req.body.currentUser._id }), (err, posts) => {
     if (err) return res.stauts(500).json({error: err});
     return res.json(posts);
   });
