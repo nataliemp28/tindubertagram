@@ -2,6 +2,8 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const secret = require('../config/tokens').secret;
 
+
+//CREATE
 function register(req, res){
   User.create(req.body, (err, user) => {
     if (err) return res.status(500).json({ message: 'Something went wrong.' });
