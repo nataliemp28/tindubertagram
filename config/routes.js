@@ -2,28 +2,31 @@ const router = require('express').Router();
 const authController = require('../controllers/auth');
 const postsController = require('../controllers/posts');
 const usersController = require('../controllers/users');
+const secureRoute = require('../lib/secureRoute');
 
 router
   .post('/login', authController.login)
   .post('/register', authController.register);
 
+router.route('/posts')
+  .post(postsController.create);
+
 router.route('/posts/:id')
   .get(postsController.show)
-  .post(postsController.create)
   .put(postsController.update)
   .delete(postsController.delete);
 
-router.route('/posts/user/feed/:id')
-  .get(postsController.indexPublic);
+router.route('/user/feed')
+  .get(secureRoute, usersController.feed);
 
-router.route('/posts/user/:id')
-  .get(postsController.indexPrivate);
+router.route('/user/posts')
+  .get(secureRoute, usersController.posts);
 
-router.route('/users/:id/following')
-  .get(usersController.following);
+router.route('/user/following')
+  .get(secureRoute, usersController.following);
 
-router.route('/users/:id/followers')
-  .get(usersController.followers);
+router.route('/user/followers')
+  .get(secureRoute, usersController.followers);
 
 router.route('/users/:id')
   .get(usersController.show)

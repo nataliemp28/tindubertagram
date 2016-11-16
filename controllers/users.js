@@ -1,26 +1,62 @@
 const User = require('../models/user');
-
-//SHOW
-//UPDATE
-//DELETE
+const Post = require('../models/post');
 
 //FOLLOWERS
-//get all the people (by id, so whoever has clicked follow on your record, put them into an array) who are following you.
-//FOLLOWING
+function followers(req, res) {
+  User.findById(req.user._id, (err) => {
+    if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
 
-
-//FOLLOWING - LIST OF PEOPLE YOU ARE FOLLOWING
-function usersFollowing(req, res, currentUser) {
-  User.find(({ _id: currentUser.following}), (err, users) => {
-    if (err) return res.status(500).json({ error: err });
-    return res.json(users);
+    User.find(({ following: req.user._id }), (err, users) => {
+      if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
+      return res.status(200).json(users);
+    });
   });
-
 }
 
-//FOLLOWERS - PEOPLE WHO FOLLOW YOU.
-function usersFollowers(req, res) {
-  User.findById
+//FOLLOWING
+function following(req, res) {
+  User.findById(req.user._id, (err, user) => {
+    if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
+    const followingIds = user.following;
+
+    User.find({ _id: { $in: followingIds } })
+      .populate('following')
+      .exec((err, users) => {
+        if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
+        return res.status(200).json(users);
+      });
+  });
+}
+
+// PROFILE FEED
+function posts(req, res) {
+  User.findById(req.user._id, (err) => {
+    if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
+
+    Post.find({ user: req.user._id })
+      .populate('user')
+      .exec((err, posts) => {
+        if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
+        return res.status(200).json(posts);
+      });
+  });
+}
+
+// PUBLIC FEED
+function feed(req, res) {
+  User.findById(req.user._id, (err, user) => {
+    if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
+    const userIds = user.following;
+    userIds.push(req.user._id);
+
+    Post.find({ user: { $in: userIds } })
+      .populate('user')
+      .exec((err, posts) => {
+        if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
+        return res.status(200).json(posts);
+      });
+
+  });
 }
 
 
@@ -54,6 +90,8 @@ module.exports = {
   show: usersShow,
   update: usersUpdate,
   delete: usersDelete,
-  following: usersFollowing,
-  followers: usersFollowers
+  feed: feed,
+  posts: posts,
+  following: following,
+  followers: followers
 };

@@ -1,21 +1,5 @@
 const Post = require('../models/post');
 
-// find all from my userId and followers userId
-
-function postsPublicFeed(req, res) { // Public Feed
-  Post.find(({ userId: req.body.currentUser._id || req.body.currentUser.following }), (err, posts) => {
-    if (err) return res.stauts(500).json({error: err});
-    return res.json(posts);
-  });
-}
-
-function postsPrivateFeed(req, res) { // Personal
-  Post.find(({ userId: req.body.currentUser._id }), (err, posts) => {
-    if (err) return res.stauts(500).json({error: err});
-    return res.json(posts);
-  });
-}
-
 function postsCreate(req, res) {
   Post.create(req.body, (err, post) => {
     if (err) return res.status(400).json({ error: err });
@@ -56,8 +40,6 @@ function postsDelete(res, req) {
 }
 
 module.exports = {
-  index: postsPublicFeed,
-  indexPrivate: postsPrivateFeed,
   create: postsCreate,
   show: postsShow,
   update: postsUpdate,
