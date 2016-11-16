@@ -4,8 +4,8 @@
   "main": "app.js",
   "license": "ISC",
   "scripts": {
-    "start": "bower i && node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "postinstall": "bower install"
   },
   "dependencies": {
     "bcrypt": "^0.8.7",
