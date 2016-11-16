@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "app.js",
   "license": "ISC",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
@@ -10,6 +14,9 @@
     "jsonwebtoken": "^7.1.9",
     "mongoose": "^4.6.6",
     "morgan": "^1.7.0"
+  },
+  "engines": {
+    "node": "6.8.0"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.18.0",
