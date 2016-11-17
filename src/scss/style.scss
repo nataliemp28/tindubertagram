@@ -125,4 +125,9 @@ body {
       @include align-items(center);
     }
   }
+
+  .google-map {
+    width: 800px;
+    height: 600px;
+  }
 }
