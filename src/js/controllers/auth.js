@@ -11,7 +11,7 @@ function RegisterController($auth, $state, $window) {
   function submit() {
     $auth.signup(register.user)
       .then((res) => {
-        $window.localStorage.setItem('token', res.token);
+        $window.localStorage.setItem('token', res.data.token);
         $state.go('usersIndex');
       });
   }
@@ -24,6 +24,7 @@ function LoginController($auth, $state) {
   const login = this;
 
   login.credentials = {};
+  login.isActive = false;
 
   function submit() {
     $auth.login(login.credentials)

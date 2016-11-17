@@ -1,8 +1,7 @@
 angular
 .module('travelApp', ['ngResource', 'ui.router', 'satellizer'])
 .config(Router)
-.config(Auth)
-.directive('toggleClass', toggleClass);
+.config(Auth);
 
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -10,7 +9,6 @@ function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('register', {
     url: '/register',
-    templateUrl: '/templates/register.html',
     controller: 'RegisterController as register'
   })
   .state('login', {
@@ -20,8 +18,7 @@ function Router($stateProvider, $urlRouterProvider) {
   })
   .state('usersIndex', {
     url: '/',
-    templateUrl: '/templates/login.html',
-    controller: 'LoginController as login'
+    templateUrl: '/templates/home.html'
   });
 
   $urlRouterProvider.otherwise('/');
@@ -37,16 +34,4 @@ function Auth($authProvider) {
   // $authProvider.facebook({
   //   clientId: '1854080408158696'
   // });
-}
-
-
-function toggleClass() {
-  return {
-    restrict: 'A',
-    link: function(scope, element, attrs) {
-      element.parent().bind('click', function() {
-        element.toggleClass(attrs.toggleClass);
-      });
-    }
-  };
 }

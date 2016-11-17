@@ -114,15 +114,21 @@ body {
     @include display(flex);
     @include justify-content(center);
     @include align-items(center);
-    display: none;
     .formContainer{
       background-color: white;
       height: 500px;
       width: 500px;
       border-radius: $border-radius-project;
       @include display(flex);
-      @include justify-content(center);
+      @include justify-content(flex-start);
       @include align-items(center);
+      @include flex-direction(column);
+      form{
+        width: 65%;
+      }
+      .toggle-container{
+        margin: 50px 0;
+      }
     }
   }
 }
