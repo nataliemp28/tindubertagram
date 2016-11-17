@@ -104,7 +104,6 @@ body {
     }
   }
   .signInContainer{
-    display: none;
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -115,6 +114,7 @@ body {
     @include display(flex);
     @include justify-content(center);
     @include align-items(center);
+    display: none;
     .formContainer{
       background-color: white;
       height: 500px;
