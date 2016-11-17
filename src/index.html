@@ -9,14 +9,14 @@
     <script src="/js/app.js" charset="utf-8"></script>
   </head>
     <body ng-controller="MainController as main">
-      <!-- <header class="container">
+      <header class="container">
         <h1>tindubertagramn</h1>
         <nav>
           <ul>
 
-            <li ng-if="!main.isLoggedIn()"><a ui-sref="register" class="heading" ui-sref-active="active">Register</a></li>
-
             <li ng-if="!main.isLoggedIn()"><a ui-sref="login" class="heading" ui-sref-active="active">Login</a></li>
+
+            <li ng-if="!main.isLoggedIn()"><a ui-sref="register" class="heading" ui-sref-active="active">Register</a></li>
 
             <li ng-if="main.isLoggedIn()"><a ng-click="main.logout()" class="heading">Logout</a></li>
 
@@ -26,8 +26,11 @@
         </nav>
       </header>
       <main class="container" ui-view>
-      </main> -->
-    <header>
+      </main>
+
+
+
+    <!-- <header>
       <div>
         <img class="icon" src="/assets/images/heart.svg" alt="Logo" />
       </div>
@@ -46,8 +49,8 @@
         <div class="formContainer">
           <div class="toggle-container">
             <div toggle-class="active" class="full">
-              <span>Log In</span>
-              <span>Register</span>
+              <span><a ui-sref="login" class="heading" ui-sref-active="active">Login</a></span>
+              <span><a ui-sref="register" class="heading" ui-sref-active="active">Register</a></span>
             </div>
             <div class="toggle" toggle-class="active"></div>
           </div>
@@ -70,6 +73,6 @@
         </div>
       </section>
 
-    </main>
+    </main> -->
   </body>
 </html>
