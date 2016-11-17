@@ -3,9 +3,10 @@ const Post = require('../models/post');
 
 //FOLLOWERS
 function followers(req, res) {
+  // Getting User by current user id, current user id is being attached to req by secureRoutes
   User.findById(req.user._id, (err) => {
     if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
-
+    // Getting all users that have the current user's id in their following array
     User.find(({ following: req.user._id }), (err, users) => {
       if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
       return res.status(200).json(users);
@@ -15,10 +16,11 @@ function followers(req, res) {
 
 //FOLLOWING
 function following(req, res) {
+  // Getting User by current user id, current user id is being attached to req by secureRoutes
   User.findById(req.user._id, (err, user) => {
     if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
     const followingIds = user.following;
-
+    // Finding the users where their id is contained within the current user's following array
     User.find({ _id: { $in: followingIds } })
       .populate('following')
       .exec((err, users) => {
@@ -30,9 +32,10 @@ function following(req, res) {
 
 // PROFILE FEED
 function posts(req, res) {
+  // Getting User by current user id, current user id is being attached to req by secureRoutes
   User.findById(req.user._id, (err) => {
     if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
-
+    // Finding posts where the owner (user) is equal to the current user
     Post.find({ user: req.user._id })
       .populate('user')
       .exec((err, posts) => {
@@ -44,11 +47,12 @@ function posts(req, res) {
 
 // PUBLIC FEED
 function feed(req, res) {
+  // Getting User by current user id, current user id is being attached to req by secureRoutes
   User.findById(req.user._id, (err, user) => {
     if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
     const userIds = user.following;
     userIds.push(req.user._id);
-
+    // Finding posts where the user is equal to the current user's id or their followers ids
     Post.find({ user: { $in: userIds } })
       .populate('user')
       .exec((err, posts) => {

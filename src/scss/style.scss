@@ -1,3 +1,54 @@
 body {
-  background-color: teal;
+  background-color: white;
+  color: black;
+  font-family: futura;
+  main{
+    .toggle-container{
+      height: 50px;
+      width: 300px;
+      border-radius: 500px;
+      background-color: rgba(17,157,164,0.1);
+      opacity: 10;
+      color: #119DA4;
+      cursor: pointer;
+      .full{
+        position: relative;
+        height: 0;
+        line-height: 50px;
+        display: flex;
+        justify-content: space-around;
+        z-index: 1;
+        span{
+          transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.35);
+          -webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.35);
+          &:first-child{
+            color: white;
+          }
+        }
+        &.active{
+          span{
+            &:first-child{
+              color: #119DA4;
+            }
+            &:nth-child(2){
+              color: white;
+            }
+          }
+        }
+      }
+      .toggle{
+        height: 50px;
+        width: 150px;
+        border-radius: 500px;
+        background-color: #119DA4;
+        transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.35);
+        -webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.35);
+        position: relative;
+        right: 0px;
+        &.active{
+          right: -150px;
+        }
+      }
+    }
+  }
 }
