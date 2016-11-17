@@ -5,9 +5,9 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true, required: true },
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
-  bio: { type: String, minlength: 5, maxlength: 140, required: true },
-  facebookId: { type: String, unique: true },
-  instagramId: { type: String, unique: true },
+  bio: { type: String, minlength: 5, maxlength: 140 },
+  facebookId: { type: String },
+  instagramId: { type: String },
   passwordHash: { type: String },
   following: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
 });
