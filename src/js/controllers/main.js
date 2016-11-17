@@ -1,4 +1,4 @@
-angular.module('tindubertagram')
+angular.module('travelApp')
   .controller('MainController', MainController);
 
 MainController.$inject = ['$auth', '$state', '$rootScope'];

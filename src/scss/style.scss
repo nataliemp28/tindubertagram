@@ -1,3 +1,127 @@
+@import "variables";
+@import "fonts";
+@import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
+
 body {
-  background-color: teal;
+  background-color: $background-grey;
+  color: $text-black;
+  font-family: 'montserrat', sans-serif;
+  font-weight: lighter;
+  margin: 0;
+
+  // Global Styles
+  .icon{
+    height: 25px;
+    cursor: pointer;
+    @include transition(all 200ms ease-in-out);
+    &:hover{
+      transform: scale(1.07);
+    }
+  }
+
+  header{
+    background: white;
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    padding: 0 25px;
+    position: fixed;
+    top:0;
+    box-shadow: 0 2px 2px -2px $text-black;
+    @include display(flex);
+    @include justify-content(space-between);
+    @include align-items(center);
+    @include flex-direction(row);
+    z-index: 10;
+    div{
+      &:nth-child(2){
+        @include display(flex);
+        @include justify-content(space-between);
+        @include align-items(center);
+        @include flex-direction(row);
+        width: 40%;
+        .signIn{
+          border: 1px solid $main-teal;
+          border-radius: $border-radius-pill;
+          padding: 5px 10px;
+          cursor: pointer;
+          color: $main-teal;
+          @include transition(all 200ms ease-in-out);
+          &:hover{
+            color: white;
+            background-color: $main-teal;
+          }
+        }
+      }
+    }
+  }
+  main{
+    margin-top: 80px;
+    height: 200vh;
+    .toggle-container{
+      height: 50px;
+      width: 300px;
+      border-radius: $border-radius-pill;
+      background-color: rgba(17, 157, 164 ,0.1);
+      color: $main-teal;
+      cursor: pointer;
+      .full{
+        position: relative;
+        height: 0;
+        line-height: 50px;
+        @include display(flex);
+        @include justify-content(space-around);
+        z-index: 1;
+        span{
+          @include transition(all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.35));
+          &:first-child{
+            color: white;
+          }
+        }
+        &.active{
+          span{
+            &:first-child{
+              color: $main-teal;
+            }
+            &:nth-child(2){
+              color: white;
+            }
+          }
+        }
+      }
+      .toggle{
+        height: 50px;
+        width: 150px;
+        border-radius: $border-radius-pill;
+        background-color: $main-teal;
+        @include transition(all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.35));
+        position: relative;
+        right: 0px;
+        &.active{
+          right: -150px;
+        }
+      }
+    }
+  }
+  .signInContainer{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 99;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    .formContainer{
+      background-color: white;
+      height: 500px;
+      width: 500px;
+      border-radius: $border-radius-project;
+      @include display(flex);
+      @include justify-content(center);
+      @include align-items(center);
+    }
+  }
 }

@@ -3,21 +3,24 @@
   "description": "",
   "main": "app.js",
   "authors": [
-    "mickyginger <mickyginger@gmail.com>"
+    "moorow <olimoorow@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/mickyginger/WDI_LDN_23_CLASSWORK",
+  "homepage": "https://github.com/moorow/tindubertagram",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "bourbon"
   ],
   "dependencies": {
     "angular": "^1.5.8",
     "angular-ui-router": "ui-router#^0.3.2",
     "satellizer": "^0.15.5",
-    "angular-resource": "^1.5.8"
+    "angular-resource": "^1.5.8",
+    "bootstrap": "4.0.0-alpha.5",
+    "bourbon": "^4.2.7"
   }
 }

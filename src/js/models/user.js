@@ -1,4 +1,4 @@
-angular.module('tindubertagram')
+angular.module('travelApp')
   .factory('User', User);
 
 function User($resource) {

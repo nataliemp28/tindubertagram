@@ -1,4 +1,4 @@
-angular.module('tindubertagram')
+angular.module('travelApp')
     .controller('RegisterController', RegisterController)
     .controller('LoginController', LoginController);
 

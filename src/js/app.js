@@ -1,7 +1,8 @@
 angular
-.module('tindubertagram', ['ngResource', 'ui.router', 'satellizer'])
+.module('travelApp', ['ngResource', 'ui.router', 'satellizer'])
 .config(Router)
-.config(Auth);
+.config(Auth)
+.directive('toggleClass', toggleClass);
 
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -36,4 +37,16 @@ function Auth($authProvider) {
   // $authProvider.facebook({
   //   clientId: '1854080408158696'
   // });
+}
+
+
+function toggleClass() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      element.parent().bind('click', function() {
+        element.toggleClass(attrs.toggleClass);
+      });
+    }
+  };
 }

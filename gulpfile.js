@@ -2,7 +2,19 @@ const gulp = require('gulp');
 const plumber = require('gulp-plumber');
 const del = require('del');
 const nodemon = require('gulp-nodemon');
-const bower = require('main-bower-files')();
+const bower = require('main-bower-files')({
+  overrides: {
+    bootstrap: {
+      main: 'dist/css/bootstrap.min.css'
+    },
+    jquery: {
+      ignore: true
+    },
+    tether: {
+      ignore: true
+    }
+  }
+});
 const filter = require('gulp-filter');
 const concat = require('gulp-concat');
 const babel = require('gulp-babel');
@@ -31,6 +43,10 @@ gulp.task('bower:js', () => {
 gulp.task('bower:css', () => {
   return gulp.src(bower)
     .pipe(filter(['**/*.css']))
+    .pipe(order([
+      'bootstrap.min.css',
+      '**/*.css'
+    ]))
     .pipe(concat('vendor.css'))
     .pipe(plumber())
     .pipe(cleanCSS({ compatibility: 'ie8' }))
@@ -77,6 +93,13 @@ gulp.task('html', () => {
     .pipe(livereload());
 });
 
+// assets
+gulp.task('assets', () => {
+  return gulp.src('src/assets/**/*.{ttf,woff,woff2,svg,png,jpg,jpeg}')
+    .pipe(gulp.dest('public/assets'))
+    .pipe(livereload());
+});
+
 // nodemon
 gulp.task('nodemon', () => {
   return nodemon()
@@ -93,6 +116,7 @@ gulp.task('watch', () => {
   gulp.watch('src/**/*.html', ['html']);
   gulp.watch('src/**/*.js', ['scripts']);
   gulp.watch('src/**/*.scss', ['styles']);
+  gulp.watch('src/assets/**/*', ['assets']);
 });
 
-gulp.task('default', sequence('clean', ['bower:js', 'bower:css'], ['scripts', 'styles', 'html'], 'watch', 'nodemon'));
+gulp.task('default', sequence('clean', ['bower:js', 'bower:css'], ['scripts', 'styles', 'html', 'assets'], 'watch', 'nodemon'));
