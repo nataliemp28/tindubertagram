@@ -11,7 +11,7 @@
     <script src="/js/app.js" charset="utf-8"></script>
   </head>
     <body ng-controller="MainController as main">
-      <header class="container">
+      <!-- <header class="container">
         <h1>tindubertagramn</h1>
         <nav>
           <ul>
@@ -28,56 +28,33 @@
         </nav>
       </header>
       <main class="container" ui-view>
-      </main>
+      </main> -->
 
 
 
-    <!-- <header>
+    <header>
       <div>
         <img class="icon" src="/assets/images/heart.svg" alt="Logo" />
       </div>
       <div>
         <img class="icon" src="/assets/images/newPost.svg" alt="New Post" />
         <img class="icon" src="/assets/images/search.svg" alt="Search" />
-        <div class="signIn">
-          Sign in / Register
-        </div>
+        <a ui-sref="login">
+          <div ng-if="!main.isLoggedIn()" class="signIn">
+            Sign in / Register
+          </div>
+        </a>
+        <div class="signIn" ng-if="main.isLoggedIn()" ng-click="main.logout()">Logout</div>
       </div>
     </header>
-    <main class="container">
+    
+    <main class="container" ui-view>
       <h1>Travel Journal</h1>
 
-      <div class="signInContainer">
-        <div class="formContainer">
-          <div class="toggle-container">
-            <div toggle-class="active" class="full">
-              <span><a ui-sref="login" class="heading" ui-sref-active="active">Login</a></span>
-              <span><a ui-sref="register" class="heading" ui-sref-active="active">Register</a></span>
-            </div>
-            <div class="toggle" toggle-class="active"></div>
-          </div>
-        </div>
-      </div>
-
-
-      <section class="card-container">
-        <div class="card">
-          <div class="card-block">
-            <h4 class="card-title">Card title</h4>
-            <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-          </div>
-          <img src="" alt="Card image">
-          <div class="card-block">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-          </div>
-        </div>
-      </section>
       <section>
         <google-map></google-map>
       </section>
+    </main>
 
-    </main> -->
   </body>
 </html>
