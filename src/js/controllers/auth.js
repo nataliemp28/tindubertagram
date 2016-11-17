@@ -36,11 +36,11 @@ function LoginController($auth, $state) {
 
   login.submit = submit;
 
-  function authenticate(provider) {
-    $auth.authenticate(provider)
-      .then((res) => {
-        console.log(res);
-      });
+  function authenticate(service) {
+    $auth.authenticate(service, () => {
+      $state.go('usersIndex');
+    });
   }
+
   login.authenticate = authenticate;
 }
