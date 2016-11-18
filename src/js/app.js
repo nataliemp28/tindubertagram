@@ -1,5 +1,5 @@
 angular
-.module('travelApp', ['ngResource', 'ui.router', 'satellizer'])
+.module('travelApp', ['ngResource', 'ui.router', 'satellizer', 'gMap'])
 .config(Router)
 .config(Auth);
 
@@ -33,5 +33,9 @@ function Auth($authProvider) {
 
   $authProvider.facebook({
     clientId: '332198860490764'
+  });
+
+  $authProvider.instagram({
+    clientId: '92e67d01aacb443fa782c92500650463'
   });
 }
