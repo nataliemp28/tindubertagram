@@ -11,6 +11,7 @@ User.create([{
   firstName: 'Oli',
   lastName: 'Moore',
   bio: 'I love da cheese',
+  image: '/assets/images/sam.jpg',
   password: 'examplePassword',
   passwordConfirmation: 'examplePassword'
 },{
@@ -18,6 +19,7 @@ User.create([{
   firstName: 'thea',
   lastName: 'Carter',
   bio: 'I love da cheese too',
+  image: '/assets/images/sam.jpg',
   password: 'examplePassword',
   passwordConfirmation: 'examplePassword'
 },{
@@ -25,6 +27,7 @@ User.create([{
   firstName: 'nat',
   lastName: 'Pateman',
   bio: 'I also love da cheese',
+  image: '/assets/images/sam.jpg',
   password: 'examplePassword',
   passwordConfirmation: 'examplePassword'
 }], (err, users) => {

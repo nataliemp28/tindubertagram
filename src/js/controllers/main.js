@@ -1,10 +1,15 @@
 angular.module('travelApp')
   .controller('MainController', MainController);
 
-MainController.$inject = ['$auth', '$state', '$rootScope' , '$window'];
+MainController.$inject = ['$auth', '$state', '$rootScope' , 'User'];
 
-function MainController($auth, $state, $rootScope, $window ) {
+function MainController($auth, $state, $rootScope, User) {
   const main = this;
+
+  if ($auth.getPayload()) {
+    const userId = { id: $auth.getPayload()._id };
+    this.currentUser = User.get(userId);
+  }
 
   main.isLoggedIn = $auth.isAuthenticated;
   main.message = null;
@@ -12,7 +17,6 @@ function MainController($auth, $state, $rootScope, $window ) {
   function logout() {
     $auth.logout()
       .then(() => {
-        $window.localStorage.removeItem('userId'); // Check removeItem and params
         $state.go('home');
       });
   }

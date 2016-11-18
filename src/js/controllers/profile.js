@@ -1,10 +1,10 @@
 angular.module('travelApp')
   .controller('ProfileController', ProfileController);
 
-ProfileController.$inject = [ '$state' , 'User'];
+ProfileController.$inject = [ '$auth', '$state' , 'User'];
 
-function ProfileController($state, User) {
+function ProfileController($auth, $state, User) {
   const profile = this;
 
-  profile.user = User.show( localStorage.userId );
+  profile.user = User.show( $auth.getPayload()._id );
 }

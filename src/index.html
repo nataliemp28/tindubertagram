@@ -19,16 +19,26 @@
       <div>
         <img class="icon" src="/assets/images/newPost.svg" alt="New Post" />
         <img class="icon" src="/assets/images/search.svg" alt="Search" />
-        <a ui-sref="login">
-          <div ng-if="!main.isLoggedIn()" class="signIn">
+        <a ng-if="!main.isLoggedIn()" ui-sref="login">
+          <div class="signIn">
             Sign in / Register
           </div>
         </a>
-        <div class="signIn" ng-if="main.isLoggedIn()" ng-click="main.logout()">Logout</div>
+        <div ng-if="main.isLoggedIn()" class="profilePic">
+          <img src="{{ main.currentUser.image }}"></img>
+        </div>
+
+
+        <!-- <nav>
+          <ul>
+            <li ng-click="main.logout()">Logout</li>
+          </ul>
+        </nav> -->
       </div>
     </header>
 
     <main class="container" ui-view>
+      {{ main.currentUser }}
     </main>
 
   </body>
