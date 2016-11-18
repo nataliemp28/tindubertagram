@@ -13,33 +13,44 @@
     <body ng-controller="MainController as main">
 
     <header>
-      <div>
-        <img class="icon" src="/assets/images/heart.svg" alt="Logo" />
+      <div class="mainHeader">
+        <div>
+          <img class="icon" src="/assets/images/heart.svg" alt="Logo" />
+        </div>
+        <div>
+          <img class="icon" src="/assets/images/newPost.svg" alt="New Post" />
+          <img class="icon" src="/assets/images/search.svg" ng-click="main.searchBoxOpen = !main.searchBoxOpen" alt="Search" />
+
+          <a ng-if="!main.isLoggedIn()" ui-sref="login">
+            <div class="signIn">
+              Sign in / Register
+            </div>
+          </a>
+          <div ng-if="main.isLoggedIn()" class="profilePic">
+            <img src="{{ main.currentUser.image }}"></img>
+          </div>
+
+
+          <!-- <nav>
+            <ul>
+              <li ng-click="main.logout()">Logout</li>
+            </ul>
+          </nav> -->
+        </div>
       </div>
-      <div>
-        <img class="icon" src="/assets/images/newPost.svg" alt="New Post" />
-        <img class="icon" src="/assets/images/search.svg" alt="Search" />
-        <input type="text" ng-model="main.searchTerm" ng-change="main.search()">
+      <div ng-show="main.searchBoxOpen" class="searchContainer">
+        <input type="text" ng-model="main.searchTerm" ng-change="main.search()" placeholder="Search...">
         <div class="searchResults">
           <div class="result" ng-repeat="user in main.allUsers">
-            {{ user.firstName }}
+            <div class="profilePic">
+              <img src="{{ user.image }}"></img>
+            </div>
+            <p>
+              {{ user.firstName }} {{ user.lastName }}
+            </p>
+
           </div>
         </div>
-        <a ng-if="!main.isLoggedIn()" ui-sref="login">
-          <div class="signIn">
-            Sign in / Register
-          </div>
-        </a>
-        <div ng-if="main.isLoggedIn()" class="profilePic">
-          <img src="{{ main.currentUser.image }}"></img>
-        </div>
-
-
-        <!-- <nav>
-          <ul>
-            <li ng-click="main.logout()">Logout</li>
-          </ul>
-        </nav> -->
       </div>
     </header>
 

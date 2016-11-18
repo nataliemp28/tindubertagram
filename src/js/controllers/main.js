@@ -5,6 +5,7 @@ MainController.$inject = ['$auth', '$state', '$rootScope' , 'User', 'UserSearch'
 
 function MainController($auth, $state, $rootScope, User, UserSearch) {
   const main = this;
+  main.searchBoxOpen = false;
 
   if ($auth.getPayload()) {
     const userId = { id: $auth.getPayload()._id };
