@@ -41,7 +41,7 @@
 
     <nav>
       <ul>
-        <li><a ui-sref="profile">Profile</a></li>
+        <li><a ui-sref="profile({ id: main.currentUser._id })">Profile</a></li>
         <li ng-click="main.logout()">Logout</li>
       </ul>
     </nav>
