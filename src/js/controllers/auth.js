@@ -12,7 +12,6 @@ function RegisterController($auth, $state, $window) {
     $auth.signup(register.user)
       .then((res) => {
         $window.localStorage.setItem('token', res.data.token);
-        // $window.localStorage.setItem('userId', res.data.user._id);
         $state.go('feed');
       });
   }

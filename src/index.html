@@ -14,7 +14,7 @@
 
     <header>
       <div>
-        <img class="icon" src="/assets/images/heart.svg" alt="Logo" />
+        <a ui-sref="home"><img class="icon" src="/assets/images/heart.svg" alt="Logo" /></a>
       </div>
       <div>
         <img class="icon" src="/assets/images/newPost.svg" alt="New Post" />
@@ -35,13 +35,16 @@
         </div>
 
 
-        <!-- <nav>
-          <ul>
-            <li ng-click="main.logout()">Logout</li>
-          </ul>
-        </nav> -->
+
       </div>
     </header>
+
+    <nav>
+      <ul>
+        <li><a ui-sref="profile">Profile</a></li>
+        <li ng-click="main.logout()">Logout</li>
+      </ul>
+    </nav>
 
     <main class="container" ui-view>
       {{ main.currentUser }}
