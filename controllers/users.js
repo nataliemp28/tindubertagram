@@ -63,6 +63,15 @@ function feed(req, res) {
   });
 }
 
+//SEARCH
+function usersSearch(req, res) {
+  console.log(req.query);
+  User.find( { firstName: new RegExp( req.query.search, 'i')}, (err, user) => {
+    if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
+    if (!user) return res.status(404).json({ message: 'No user found.' });
+    return res.status(200).json(user);
+  });
+}
 
 //SHOW
 function usersShow(req, res) {
@@ -92,6 +101,7 @@ function usersDelete(req, res) {
 
 module.exports = {
   show: usersShow,
+  search: usersSearch,
   update: usersUpdate,
   delete: usersDelete,
   feed: feed,

@@ -36,4 +36,7 @@ router.route('/users/:id')
   .put(usersController.update)
   .delete(usersController.delete);
 
+router.route('/users')
+  .get(usersController.search);
+
 module.exports = router;

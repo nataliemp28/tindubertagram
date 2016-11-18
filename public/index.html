@@ -11,57 +11,49 @@
     <script src="/js/app.js" charset="utf-8"></script>
   </head>
     <body ng-controller="MainController as main">
-      <!-- <header class="container">
-        <h1>tindubertagramn</h1>
-        <nav>
-          <ul>
-
-            <li ng-if="!main.isLoggedIn()"><a ui-sref="login" class="heading" ui-sref-active="active">Login</a></li>
-
-            <li ng-if="!main.isLoggedIn()"><a ui-sref="register" class="heading" ui-sref-active="active">Register</a></li>
-
-            <li ng-if="main.isLoggedIn()"><a ng-click="main.logout()" class="heading">Logout</a></li>
-
-            <p ng-if="main.message">{{ main.message }}</p>
-
-          </ul>
-        </nav>
-      </header>
-      <main class="container" ui-view>
-      </main> -->
-
-
 
     <header>
-      <div>
-        <img class="icon" src="/assets/images/heart.svg" alt="Logo" />
-      </div>
-      <div>
-        <img class="icon" src="/assets/images/newPost.svg" alt="New Post" />
-        <img class="icon" src="/assets/images/search.svg" alt="Search" />
-        <a ui-sref="login">
-          <div ng-if="!main.isLoggedIn()" class="signIn">
-            Sign in / Register
+      <div class="mainHeader">
+        <div>
+          <img class="icon" src="/assets/images/heart.svg" alt="Logo" />
+        </div>
+        <div>
+          <img class="icon" src="/assets/images/newPost.svg" alt="New Post" />
+          <img class="icon" src="/assets/images/search.svg" ng-click="main.searchBoxOpen = !main.searchBoxOpen" alt="Search" />
+
+          <a ng-if="!main.isLoggedIn()" ui-sref="login">
+            <div class="signIn">
+              Sign in / Register
+            </div>
+          </a>
+          <div ng-if="main.isLoggedIn()" class="profilePic">
+            <img src="{{ main.currentUser.image }}"></img>
           </div>
-        </a>
-        <div class="signIn" ng-if="main.isLoggedIn()" ng-click="main.logout()">Logout</div>
+          <nav>
+            <ul>
+              <li ng-click="main.logout()">Logout</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div ng-show="main.searchBoxOpen" class="searchContainer">
+        <input type="text" ng-model="main.searchTerm" ng-change="main.search()" placeholder="Search...">
+        <div class="searchResults">
+          <div class="result" ng-repeat="user in main.allUsers">
+            <div class="profilePic">
+              <img src="{{ user.image }}"></img>
+            </div>
+            <p>
+              {{ user.firstName }} {{ user.lastName }}
+            </p>
+
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="container" ui-view>
-      <h1>Travel Journal</h1>
-
-
-</style>
-</head>
-
-
-
-
-
-      <section>
-        <google-map></google-map>
-      </section>
+      {{ main.currentUser }}
     </main>
 
   </body>

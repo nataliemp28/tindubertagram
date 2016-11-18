@@ -1,10 +1,16 @@
 angular.module('travelApp')
   .controller('MainController', MainController);
 
-MainController.$inject = ['$auth', '$state', '$rootScope'];
+MainController.$inject = ['$auth', '$state', '$rootScope' , 'User', 'UserSearch'];
 
-function MainController($auth, $state, $rootScope) {
+function MainController($auth, $state, $rootScope, User, UserSearch) {
   const main = this;
+  main.searchBoxOpen = false;
+
+  if ($auth.getPayload()) {
+    const userId = { id: $auth.getPayload()._id };
+    this.currentUser = User.get(userId);
+  }
 
   main.isLoggedIn = $auth.isAuthenticated;
   main.message = null;
@@ -12,8 +18,7 @@ function MainController($auth, $state, $rootScope) {
   function logout() {
     $auth.logout()
       .then(() => {
-        console.log('main controller logout');
-        // $state.go('usersIndex');
+        $state.go('home');
       });
   }
   const protectedStates = ['usersEdit', 'usersNew'];
@@ -22,7 +27,6 @@ function MainController($auth, $state, $rootScope) {
     main.message = null;
     if(!$auth.isAuthenticated && protectedStates.includes(toState.name)) {
       e.preventDefault();
-      // console.log('state: ',$state);
       $state.go('login');
       main.message = 'You must be logged in to go there!';
     }
@@ -31,4 +35,13 @@ function MainController($auth, $state, $rootScope) {
   $rootScope.$on('$stateChangeStart', secureState);
 
   main.logout = logout;
+
+  function search() {
+    if (main.searchTerm.length !== 0){
+      main.allUsers = UserSearch.query({search: main.searchTerm });
+    } else {
+      main.allUsers = 0;
+    }
+  }
+  main.search = search;
 }

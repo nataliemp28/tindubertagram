@@ -12,7 +12,8 @@ function RegisterController($auth, $state, $window) {
     $auth.signup(register.user)
       .then((res) => {
         $window.localStorage.setItem('token', res.data.token);
-        $state.go('usersIndex');
+        // $window.localStorage.setItem('userId', res.data.user._id);
+        $state.go('feed');
       });
   }
 
@@ -29,8 +30,7 @@ function LoginController($auth, $state) {
   function submit() {
     $auth.login(login.credentials)
       .then(() => {
-        console.log('We would go to the feed now!');
-        $state.go('usersIndex');
+        $state.go('feed');
       });
   }
 

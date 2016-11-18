@@ -1,63 +1,35 @@
-// angular.module('dogApp')
-//     .controller('DogsIndexController', DogsIndexController)
-//     .controller('DogsNewController', DogsNewController)
-//     .controller('DogsShowController', DogsShowController)
-//     .controller('DogsEditController', DogsEditController)
-//
-// DogsIndexController.$inject = ['Dog'];
-// 
-// //INDEX
-// function DogsIndexController(Dog){
-//     const dogsIndex = this;
-//
-//     dogsIndex.all = Dog.query();
-// }
-//
-// DogsNewController.$inject = ['Dog', '$state'];
-//
-// //CREATE
-// function DogsNewController(Dog, $state) {
-//     const dogsNew = this;
-//     dogsNew.dog = {};
-//
-//   function createDog() {
-//     Dog.save(dogsNew.dog, () => {
-//         $state.go('dogsIndex');
-//     });
-// }
-//   dogsNew.create = createDog;
-// }
-//
-// DogsShowController.$inject = ['Dog', '$state'];
-//
-// //SHOW & DELETE
-// function DogsShowController(Dog, $state) {
-//     const dogsShow = this;
-//
-//     dogsShow.dog = Dog.get($state.params);
-//
-//   function deleteDog() {
-//     dogsShow.dog.$remove(() => {
-//         $state.go('dogsIndex');
-//     });
-// }
-// dogsShow.delete = deleteDog;
-// }
-//
-//
-// DogsEditController.$inject = ['Dog', '$state'];
-//
-// //EDIT & UPDATE
-// function DogsEditController(Dog, $state) {
-//   const dogsEdit = this;
-//
-//   dogsEdit.dog = Dog.get($state.params);
-//
-//   function update() {
-//     Dog.update({ id: dogsEdit.dog._id }, dogsEdit.dog, () => {
-//       $state.go('dogsShow', $state.params);
-//     });
-//   }
-//
-//   this.update = update;
-// }
+angular.module('travelApp')
+  .controller('UserShowController', UserShowController)
+  .controller('UserEditController', UserEditController);
+
+UserShowController.$inject = ['$state', '$auth', 'User'];
+function UserShowController($state, $auth, User) {
+  const userShow = this;
+
+  userShow.isLoggedIn = $auth.isAuthenticated;
+  userShow.user = User.get($state.params);
+
+  function deleteUser() {
+    userShow.user.$remove(() => {
+      $state.go('home');
+    });
+  }
+
+  userShow.delete = deleteUser;
+}
+
+UserEditController.$inject = ['User', '$state'];
+function UserEditController(User, $state) {
+  const userEdit = this;
+
+  userEdit.user = User.get($state.params);
+
+  function update() {
+    userEdit.user.$update(() => {
+      $state.go('profile', $state.params);
+    });
+  }
+
+  this.update = update;
+
+}

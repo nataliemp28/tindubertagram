@@ -1,5 +1,5 @@
 angular
-.module('travelApp', ['ngResource', 'ui.router', 'satellizer', 'gMap'])
+.module('travelApp', ['ngResource', 'ui.router', 'satellizer'])
 .config(Router)
 .config(Auth);
 
@@ -16,7 +16,18 @@ function Router($stateProvider, $urlRouterProvider) {
     templateUrl: '/templates/login.html',
     controller: 'LoginController as login'
   })
-  .state('usersIndex', {
+  .state('feed', {
+    url: '/feed',
+    templateUrl: '/templates/cardContainer.html',
+    controller: 'MainFeedController as mainFeed'
+  }).state('profile', {
+    url: '/user/:id',
+    templateUrl: '/templates/profile.html',
+    controller: 'UserShowController as userShow'
+  }).state('map', {
+    url: '/map',
+    templateUrl: '/templates/map.html'
+  }).state('home', {
     url: '/',
     templateUrl: '/templates/home.html'
   });
