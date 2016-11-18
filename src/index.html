@@ -19,6 +19,12 @@
       <div>
         <img class="icon" src="/assets/images/newPost.svg" alt="New Post" />
         <img class="icon" src="/assets/images/search.svg" alt="Search" />
+        <input type="text" ng-model="main.searchTerm" ng-change="main.search()">
+        <div class="searchResults">
+          <div class="result" ng-repeat="user in main.allUsers">
+            {{ user.firstName }}
+          </div>
+        </div>
         <a ng-if="!main.isLoggedIn()" ui-sref="login">
           <div class="signIn">
             Sign in / Register
@@ -39,6 +45,7 @@
 
     <main class="container" ui-view>
       {{ main.currentUser }}
+
     </main>
 
   </body>

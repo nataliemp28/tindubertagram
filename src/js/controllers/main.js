@@ -1,9 +1,9 @@
 angular.module('travelApp')
   .controller('MainController', MainController);
 
-MainController.$inject = ['$auth', '$state', '$rootScope' , 'User'];
+MainController.$inject = ['$auth', '$state', '$rootScope' , 'User', 'UserSearch'];
 
-function MainController($auth, $state, $rootScope, User) {
+function MainController($auth, $state, $rootScope, User, UserSearch) {
   const main = this;
 
   if ($auth.getPayload()) {
@@ -34,4 +34,13 @@ function MainController($auth, $state, $rootScope, User) {
   $rootScope.$on('$stateChangeStart', secureState);
 
   main.logout = logout;
+
+  function search() {
+    if (main.searchTerm.length !== 0){
+      main.allUsers = UserSearch.query({search: main.searchTerm });
+    } else {
+      main.allUsers = 0;
+    }
+  }
+  main.search = search;
 }

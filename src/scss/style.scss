@@ -42,6 +42,17 @@ body {
         .icon, .profilePic {
           margin: 0 20px;
         }
+        .searchResults{
+          position: absolute;
+          top: 80px;
+          right: 0;
+          .result{
+            width: 200px;
+            background: white;
+            height: 50px;
+            border-bottom: 1px solid black; 
+          }
+        }
         .signIn{
           border: 1px solid $main-teal;
           border-radius: $border-radius-pill;
