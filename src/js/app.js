@@ -42,7 +42,7 @@ function Auth($authProvider) {
 
   $authProvider.tokenPrefix = '';
 
-  // $authProvider.facebook({
-  //   clientId: '1854080408158696'
-  // });
+  $authProvider.facebook({
+    clientId: '332198860490764'
+  });
 }
