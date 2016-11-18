@@ -11,26 +11,6 @@
     <script src="/js/app.js" charset="utf-8"></script>
   </head>
     <body ng-controller="MainController as main">
-      <!-- <header class="container">
-        <h1>tindubertagramn</h1>
-        <nav>
-          <ul>
-
-            <li ng-if="!main.isLoggedIn()"><a ui-sref="login" class="heading" ui-sref-active="active">Login</a></li>
-
-            <li ng-if="!main.isLoggedIn()"><a ui-sref="register" class="heading" ui-sref-active="active">Register</a></li>
-
-            <li ng-if="main.isLoggedIn()"><a ng-click="main.logout()" class="heading">Logout</a></li>
-
-            <p ng-if="main.message">{{ main.message }}</p>
-
-          </ul>
-        </nav>
-      </header>
-      <main class="container" ui-view>
-      </main> -->
-
-
 
     <header>
       <div>
@@ -47,13 +27,8 @@
         <div class="signIn" ng-if="main.isLoggedIn()" ng-click="main.logout()">Logout</div>
       </div>
     </header>
-    
-    <main class="container" ui-view>
-      <h1>Travel Journal</h1>
 
-      <section>
-        <google-map></google-map>
-      </section>
+    <main class="container" ui-view>
     </main>
 
   </body>

@@ -58,6 +58,13 @@ body {
   main{
     margin-top: 80px;
     height: 200vh;
+    .card-container{
+      .card{
+        img{
+          max-width: 100%;
+        }
+      }
+    }
     .toggle-container{
       height: 50px;
       width: 300px;

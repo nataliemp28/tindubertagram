@@ -33,17 +33,41 @@ User.create([{
 
   Post.create([{
     title: 'Example Post',
-    image: 'i am an image',
-    bodyText: 'i am a new post',
+    image: '/assets/images/example.jpg',
+    bodyText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     user: users[0],
     latlng: 'new lat and lng',
     comments: null,
     likes: null
   },{
     title: 'Example Post 2',
-    image: 'i am an image',
-    bodyText: 'i am a new post',
+    image: '/assets/images/example.jpg',
+    bodyText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     user: users[1],
+    latlng: 'new lat and lng',
+    comments: null,
+    likes: null
+  },{
+    title: 'Example Post 3',
+    image: '/assets/images/example.jpg',
+    bodyText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    user: users[2],
+    latlng: 'new lat and lng',
+    comments: null,
+    likes: null
+  },{
+    title: 'Example Post 4',
+    image: '/assets/images/example.jpg',
+    bodyText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    user: users[1],
+    latlng: 'new lat and lng',
+    comments: null,
+    likes: null
+  },{
+    title: 'Example Post 5',
+    image: '/assets/images/example.jpg',
+    bodyText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    user: users[0],
     latlng: 'new lat and lng',
     comments: null,
     likes: null

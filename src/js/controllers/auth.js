@@ -12,15 +12,16 @@ function RegisterController($auth, $state, $window) {
     $auth.signup(register.user)
       .then((res) => {
         $window.localStorage.setItem('token', res.data.token);
-        $state.go('usersIndex');
+        $window.localStorage.setItem('userId', res.data.user._id);
+        $state.go('feed');
       });
   }
 
   register.submit = submit;
 }
 
-LoginController.$inject = ['$auth', '$state'];
-function LoginController($auth, $state) {
+LoginController.$inject = ['$auth', '$state', '$window'];
+function LoginController($auth, $state, $window) {
   const login = this;
 
   login.credentials = {};
@@ -28,9 +29,9 @@ function LoginController($auth, $state) {
 
   function submit() {
     $auth.login(login.credentials)
-      .then(() => {
-        console.log('We would go to the feed now!');
-        $state.go('usersIndex');
+      .then((res) => {
+        $window.localStorage.setItem('userId', res.data.user._id);
+        $state.go('feed');
       });
   }
 

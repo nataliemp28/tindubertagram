@@ -16,7 +16,18 @@ function Router($stateProvider, $urlRouterProvider) {
     templateUrl: '/templates/login.html',
     controller: 'LoginController as login'
   })
-  .state('usersIndex', {
+  .state('feed', {
+    url: '/feed',
+    templateUrl: '/templates/cardContainer.html',
+    controller: 'MainFeedController as mainFeed'
+  }).state('profile', {
+    url: '/profile',
+    templateUrl: '/templates/profile.html',
+    controller: 'ProfileController as profile'
+  }).state('map', {
+    url: '/map',
+    templateUrl: '/templates/map.html'
+  }).state('home', {
     url: '/',
     templateUrl: '/templates/home.html'
   });
