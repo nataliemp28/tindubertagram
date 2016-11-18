@@ -31,7 +31,7 @@
           </div>
         </a>
         <div ng-if="main.isLoggedIn()" class="profilePic">
-          <img src="{{ main.currentUser.image }}"></img>
+          <img ng-src="{{ main.currentUser.image }}"></img>
         </div>
 
 
@@ -47,7 +47,6 @@
     </nav>
 
     <main class="container" ui-view>
-      {{ main.currentUser }}
 
     </main>
 
