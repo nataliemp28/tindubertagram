@@ -8,7 +8,9 @@ function toggle() {
     replace: true,
     templateUrl: 'templates/toggle.html' ,
     scope: {
-      isActive: '='
+      isActive: '=',
+      firstValue: '@',
+      secondValue: '@'
     },
     link: function(scope, element) {
       element.on('click', () => {

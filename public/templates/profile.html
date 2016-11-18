@@ -1,1 +1,24 @@
-{{ userShow.user }}
+<section class="profileContainer">
+  <div class="userSection">
+    <div class="userDetails">
+      <div class="profilePic">
+        <img src="{{ main.currentUser.image }}" alt="" />
+      </div>
+      <div class="textContainer">
+        <p>{{ main.currentUser.firstName }} {{ main.currentUser.lastName }}</p>
+        <p>
+          {{ main.currentUser.bio }}
+        </p>
+      </div>
+    </div>
+    <div class="socialDetails">
+
+    </div>
+  </div>
+  <toggle is-active="login.isActive" first-value="Feed" second-value="Map"></toggle>
+  <div class="contentSection">
+    <div ng-controller="ProfileFeedController as profileFeed" class="feedSection">
+
+    </div>
+  </div>
+</section>

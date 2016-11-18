@@ -1,6 +1,6 @@
 <div class="signInContainer">
   <div class="formContainer">
-    <toggle is-active="login.isActive"></toggle>
+    <toggle is-active="login.isActive" first-value="Login" second-value="Register"></toggle>
     <!-- LOGIN FORM -->
     <form ng-controller="LoginController as login" class="loginForm" ng-if="!login.isActive" novalidate ng-submit="login.submit()">
       <div class="row">
