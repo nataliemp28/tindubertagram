@@ -22,6 +22,7 @@ body {
   header {
     position: fixed;
     top:0;
+    z-index: 10;
     @include display(flex);
     @include flex-direction(column);
     .searchContainer {
@@ -54,15 +55,30 @@ body {
             margin: auto 20px;
             border-radius: 50%;
             height: 50px;
-            width: 50px;
-            overflow: hidden;
-            @include display(flex);
-            @include justify-content(center);
-            @include align-items(center);
-            cursor: pointer;
-            img{
-              max-height: 60px;
-            }
+
+            // width: 50px;
+            // overflow: hidden;
+            // @include display(flex);
+            // @include justify-content(center);
+            // @include align-items(center);
+            // cursor: pointer;
+            // img{
+            //   max-height: 60px;
+            // }
+
+            border-bottom: 1px solid black;
+          }
+        }
+        .signIn{
+          border: 1px solid $main-teal;
+          border-radius: $border-radius-pill;
+          padding: 5px 10px;
+          cursor: pointer;
+          color: $main-teal;
+          @include transition(all 200ms ease-in-out);
+          &:hover{
+            color: white;
+            background-color: $main-teal;
           }
         }
       }
@@ -117,11 +133,44 @@ body {
       }
     }
   }
+  nav{
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 135px;
+    background: white;
+    z-index: 99;
+    ul{
+      list-style: none;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      li{
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        border-top: 1px solid grey;
+        text-align: center;
+        a{
+          text-decoration: none;
+          &:hover{
+            text-decoration: none;
+            color: red;
+          }
+        }
+        &:hover{
+          color: red;
+        }
+      }
+    }
+  }
   main{
+    padding-top: 20px;
     margin-top: 80px;
     height: 200vh;
     .card-container{
       .card{
+        z-index: -1;
         img{
           max-width: 100%;
         }
@@ -168,6 +217,61 @@ body {
         right: 0px;
         &.active{
           right: -150px;
+        }
+      }
+    }
+    .profileContainer{
+      @include display(flex);
+      @include justify-content(center);
+      @include flex-direction(column);
+      @include align-items(center);
+      .userSection{
+        @include display(flex);
+        @include justify-content(center);
+        @include align-items(flex-start);
+        @include flex-direction(column);
+        width: 600px;
+        background: white;
+        height: 150px;
+        border-radius: 7px;
+        box-shadow: 0px 0px 1px $text-black;
+        font-weight: lighter;
+        .userDetails{
+          @include display(flex);
+          @include flex-direction(row);
+          .textContainer{
+            p{
+              margin: 0;
+              &:first-child{
+                color: $main-teal;
+              }
+            }
+          }
+          .profilePic{
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            overflow: hidden;
+            @include display(flex);
+            @include justify-content(center);
+            @include align-items(center);
+            cursor: pointer;
+            margin: 0 20px;
+            img{
+              max-height: 60px;
+            }
+          }
+          div{
+
+          }
+        }
+        .socialDetails{
+
+        }
+      }
+      .contentSection{
+        .feedSection{
+
         }
       }
     }
