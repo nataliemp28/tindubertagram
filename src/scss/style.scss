@@ -318,6 +318,7 @@ body {
     overflow-y: auto;
     -webkit-perspective: 300px;
     perspective: 300px;
+    opacity: 0.8;
   }
 
   .parallax__group {
@@ -412,6 +413,9 @@ body {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    color: white;
+    font-size: 36;
+    font-weight: bold;
   }
 
   #group1 {
