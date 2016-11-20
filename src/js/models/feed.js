@@ -9,5 +9,5 @@ function MainFeed($resource) {
 
 ProfileFeed.$inject = ['$resource'];
 function ProfileFeed($resource) {
-  return new $resource( '/user/posts' );
+  return new $resource( '/user/:id/posts', { id: '@_id' } );
 }
