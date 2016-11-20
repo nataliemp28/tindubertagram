@@ -32,17 +32,13 @@ function following(req, res) {
 
 // PROFILE FEED
 function posts(req, res) {
-  // Getting User by current user id, current user id is being attached to req by secureRoutes
-  User.findById(req.user._id, (err) => {
-    if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
-    // Finding posts where the owner (user) is equal to the current user
-    Post.find({ user: req.user._id })
-      .populate('user')
-      .exec((err, posts) => {
-        if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
-        return res.status(200).json(posts);
-      });
-  });
+  Post.find({ user: req.params.id })
+    .populate('user')
+    .exec((err, posts) => {
+      if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
+      if (!posts) return res.status(404).json({ message: 'No posts found.' });
+      return res.status(200).json(posts);
+    });
 }
 
 // PUBLIC FEED

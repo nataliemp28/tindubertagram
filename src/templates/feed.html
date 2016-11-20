@@ -1,5 +1,7 @@
-<div class="card-container">
-  <div ng-repeat="post in mainFeed.all" class="card">
-    <card></card>
+<div ng-controller="MainFeedController as mainFeed" class="feedSection card-container">
+  <div class="card-container">
+    <div ng-repeat="post in mainFeed.all" class="card">
+      <card></card>
+    </div>
   </div>
 </div>

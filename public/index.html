@@ -9,6 +9,9 @@
   type="text/javascript"></script>
     <script src="/js/vendor.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
+
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-elevator/src/angular-elevator.js"></script>
   </head>
     <body ng-controller="MainController as main">
 
@@ -36,13 +39,14 @@
         <input type="text" ng-model="main.searchTerm" ng-change="main.search()" placeholder="Search...">
         <div class="searchResults">
           <div class="result" ng-repeat="user in main.allUsers">
-            <div class="profilePic">
-              <img ng-src="{{ user.image }}"></img>
-            </div>
-            <p>
-              {{ user.firstName }} {{ user.lastName }}
-            </p>
-
+            <a ui-sref="profile({ id: user._id })">
+              <div class="profilePic">
+                <img ng-src="{{ user.image }}"></img>
+              </div>
+              <p>
+                {{ user.firstName }} {{ user.lastName }}
+              </p>
+            </a>
           </div>
         </div>
       </div>

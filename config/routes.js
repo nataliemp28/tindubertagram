@@ -22,7 +22,7 @@ router.route('/posts/:id')
 router.route('/user/feed')
   .get(secureRoute, usersController.feed);
 
-router.route('/user/posts')
+router.route('/user/:id/posts')
   .get(secureRoute, usersController.posts);
 
 router.route('/user/following')

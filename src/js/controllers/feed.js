@@ -16,5 +16,5 @@ ProfileFeedController.$inject = [ '$state', 'ProfileFeed' ];
 function ProfileFeedController($state, ProfileFeed) {
   const profileFeed = this;
 
-  profileFeed.all = ProfileFeed.query();
+  profileFeed.all = ProfileFeed.query($state.params);
 }
