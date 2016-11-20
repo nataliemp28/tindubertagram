@@ -21,6 +21,10 @@
     "satellizer": "^0.15.5",
     "angular-resource": "^1.5.8",
     "bootstrap": "4.0.0-alpha.5",
-    "bourbon": "^4.2.7"
+    "bourbon": "^4.2.7",
+    "angular-elevator": "*"
+  },
+  "resolutions": {
+    "angular": "^1.5.8"
   }
 }
