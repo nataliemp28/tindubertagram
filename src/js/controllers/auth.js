@@ -37,7 +37,7 @@ function LoginController($auth, $state) {
 
   function authenticate(service) {
     $auth.authenticate(service, () => {
-      $state.go('usersIndex');
+      $state.go('feed');
     });
   }
 

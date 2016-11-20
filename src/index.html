@@ -27,7 +27,7 @@
             </div>
           </a>
           <div ng-if="main.isLoggedIn()" class="profilePic">
-            <img src="{{ main.currentUser.image }}"></img>
+            <img ng-src="{{ main.currentUser.image }}"></img>
           </div>
         </div>
 
@@ -37,7 +37,7 @@
         <div class="searchResults">
           <div class="result" ng-repeat="user in main.allUsers">
             <div class="profilePic">
-              <img src="{{ user.image }}"></img>
+              <img ng-src="{{ user.image }}"></img>
             </div>
             <p>
               {{ user.firstName }} {{ user.lastName }}
@@ -50,13 +50,15 @@
 
     <nav>
       <ul>
-        <li><a ui-sref="profile">Profile</a></li>
+        <li><a ui-sref="profile({ id: main.currentUser._id })">Profile</a></li>
         <li ng-click="main.logout()">Logout</li>
       </ul>
     </nav>
 
     <main class="container" ui-view>
+
     </main>
 
   </body>
+
 </html>

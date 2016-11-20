@@ -12,13 +12,14 @@
       </div>
     </div>
     <div class="socialDetails">
-
     </div>
   </div>
   <toggle is-active="login.isActive" first-value="Feed" second-value="Map"></toggle>
   <div class="contentSection">
-    <div ng-controller="ProfileFeedController as profileFeed" class="feedSection">
-
+    <div ng-controller="ProfileFeedController as profileFeed" class="feedSection card-container">
+      <div ng-repeat="post in profileFeed.all" class="card">
+        <card></card>
+      </div>
     </div>
   </div>
 </section>
