@@ -8,11 +8,18 @@ function UserShowController($state, $auth, User) {
 
   userShow.isLoggedIn = $auth.isAuthenticated;
   userShow.user = User.get($state.params);
+  userShow.profileIsCurrentUser = false;
 
   function deleteUser() {
     userShow.user.$remove(() => {
       $state.go('home');
     });
+  }
+
+  if ($state.params.id === $auth.getPayload()._id) {
+    userShow.profileIsCurrentUser = true;
+  } else {
+    userShow.profileIsCurrentUser = false;
   }
 
   userShow.delete = deleteUser;

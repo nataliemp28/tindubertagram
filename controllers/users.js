@@ -33,10 +33,12 @@ function following(req, res) {
 // PROFILE FEED
 function posts(req, res) {
   Post.find({ user: req.params.id })
+    .sort({createdAt: -1})
     .populate('user')
     .exec((err, posts) => {
       if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
       if (!posts) return res.status(404).json({ message: 'No posts found.' });
+      console.log(posts);
       return res.status(200).json(posts);
     });
 }
@@ -50,6 +52,7 @@ function feed(req, res) {
     userIds.push(req.user._id);
     // Finding posts where the user is equal to the current user's id or their followers ids
     Post.find({ user: { $in: userIds } })
+      .sort({createdAt: -1})
       .populate('user')
       .exec((err, posts) => {
         if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });

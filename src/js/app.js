@@ -1,5 +1,5 @@
 angular
-.module('travelApp', ['ngResource', 'ui.router', 'satellizer'])
+.module('travelApp', ['ngResource', 'ui.router', 'satellizer', 'textAngular', 'ngSanitize'])
 .config(Router)
 .config(Auth);
 
@@ -29,7 +29,7 @@ function Router($stateProvider, $urlRouterProvider) {
     templateUrl: '/templates/map.html'
   }).state('home', {
     url: '/',
-    templateUrl: '/templates/home.html'
+    templateUrl: '/templates/feed.html'
   });
 
   $urlRouterProvider.otherwise('/');

@@ -7,6 +7,9 @@ const bower = require('main-bower-files')({
     bootstrap: {
       main: 'dist/css/bootstrap.min.css'
     },
+    'font-awesome': {
+      main: 'css/font-awesome.css'
+    },
     jquery: {
       ignore: true
     },

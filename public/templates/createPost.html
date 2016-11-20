@@ -1,0 +1,6 @@
+<section>
+  <input type="text" placeholder="Title" ng-model="createPost.post.title">
+  <input type="text" placeholder="Location" ng-model="createPost.post.latlng">
+  <div ta-toolbar="[['h1','h2','h3'],['bold','italics']]" text-angular ng-model="createPost.post.bodyText"></div>
+  <div ng-click="createPost.create()">Submit</div>
+</section>

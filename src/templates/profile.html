@@ -1,20 +1,27 @@
 <section class="profileContainer">
   <div class="userSection">
-    <div class="userDetails">
-      <div class="profilePic">
-        <img src="{{ userShow.user.image }}" alt="" />
+    <div class="userAndControls">
+      <div class="userDetails">
+        <div class="profilePic">
+          <img src="{{ userShow.user.image }}" alt="" />
+        </div>
+        <div class="textContainer">
+          <p>{{ userShow.user.firstName }} {{ userShow.user.lastName }}</p>
+          <p>
+            {{ userShow.user.bio }}
+          </p>
+        </div>
       </div>
-      <div class="textContainer">
-        <p>{{ userShow.user.firstName }} {{ userShow.user.lastName }}</p>
-        <p>
-          {{ userShow.user.bio }}
-        </p>
+      <div class="">
+        <button type="button" name="button" ng-if="userShow.profileIsCurrentUser">Edit</button>
+        <button type="button" name="button" ng-if="!userShow.profileIsCurrentUser">Follow</button>
       </div>
     </div>
     <div class="socialDetails">
     </div>
   </div>
   <toggle is-active="login.isActive" first-value="Feed" second-value="Map"></toggle>
+  <create-post></create-post>
   <div class="contentSection">
     <div ng-controller="ProfileFeedController as profileFeed" class="feedSection card-container">
       <div ng-repeat="post in profileFeed.all" class="card">

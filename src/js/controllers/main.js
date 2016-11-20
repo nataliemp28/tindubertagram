@@ -1,11 +1,12 @@
 angular.module('travelApp')
   .controller('MainController', MainController);
 
-MainController.$inject = ['$auth', '$state', '$rootScope' , 'User', 'UserSearch'];
+MainController.$inject = ['$auth', '$state', '$rootScope' , 'User', 'UserSearch', '$scope'];
 
-function MainController($auth, $state, $rootScope, User, UserSearch) {
+function MainController($auth, $state, $rootScope, User, UserSearch, $scope) {
   const main = this;
   main.searchBoxOpen = false;
+  main.navToggle = false;
 
   if ($auth.getPayload()) {
     const userId = { id: $auth.getPayload()._id };
@@ -44,4 +45,8 @@ function MainController($auth, $state, $rootScope, User, UserSearch) {
     }
   }
   main.search = search;
+
+  $scope.textAreaSetup = function($element){
+    $element.attr('ui-codemirror', '');
+  };
 }

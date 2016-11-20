@@ -3,6 +3,7 @@ const Post = require('../models/post');
 function postsCreate(req, res) {
   Post.create(req.body, (err, post) => {
     if (err) return res.status(400).json({ error: err });
+    console.log(post);
     return res.json(post);
   });
 }
