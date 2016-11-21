@@ -7,7 +7,10 @@ const postSchema = new mongoose.Schema({
   image: { type: String },
   bodyText: { type: String },
   user: { type: mongoose.Schema.ObjectId, ref: 'User' },
-  latlng: { type: String, required: true },
+  latlng: {
+    lat: { type: Number, required: true },
+    lng: { type: Number, required: true }
+  },
   comments: [ Comment.schema ],
   likes: [ Like.schema ]
 },{

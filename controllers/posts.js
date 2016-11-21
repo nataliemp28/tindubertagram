@@ -1,5 +1,12 @@
 const Post = require('../models/post');
 
+function postsIndex(req, res) {
+  Post.find(req.query, (err, posts) => {
+    if (err) return res.status(500).json({ error: err });
+    return res.json(posts);
+  });
+}
+
 function postsCreate(req, res) {
   Post.create(req.body, (err, post) => {
     if (err) return res.status(400).json({ error: err });
@@ -40,6 +47,7 @@ function postsDelete(res, req) {
 }
 
 module.exports = {
+  index: postsIndex,
   create: postsCreate,
   show: postsShow,
   update: postsUpdate,

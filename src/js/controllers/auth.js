@@ -2,8 +2,8 @@ angular.module('travelApp')
     .controller('RegisterController', RegisterController)
     .controller('LoginController', LoginController);
 
-RegisterController.$inject = ['$auth', '$state', '$window'];
-function RegisterController($auth, $state, $window) {
+RegisterController.$inject = ['$auth', '$state', '$window', '$rootScope'];
+function RegisterController($auth, $state, $window, $rootScope) {
   const register = this;
 
   register.user = {};
@@ -12,6 +12,8 @@ function RegisterController($auth, $state, $window) {
     $auth.signup(register.user)
       .then((res) => {
         $window.localStorage.setItem('token', res.data.token);
+
+        $rootScope.$broadcast('loggedIn');
         $state.go('feed');
       });
   }
@@ -19,8 +21,8 @@ function RegisterController($auth, $state, $window) {
   register.submit = submit;
 }
 
-LoginController.$inject = ['$auth', '$state'];
-function LoginController($auth, $state) {
+LoginController.$inject = ['$auth', '$state', '$rootScope'];
+function LoginController($auth, $state, $rootScope) {
   const login = this;
 
   login.credentials = {};
@@ -29,6 +31,7 @@ function LoginController($auth, $state) {
   function submit() {
     $auth.login(login.credentials)
       .then(() => {
+        $rootScope.$broadcast('loggedIn');
         $state.go('feed');
       });
   }
@@ -40,6 +43,7 @@ function LoginController($auth, $state) {
 
     $auth.authenticate(service)
       .then(() => {
+        $rootScope.$broadcast('loggedIn');
         $state.go('feed');
       });
   }

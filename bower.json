@@ -24,6 +24,6 @@
     "bourbon": "^4.2.7",
     "angular-elevator": "*",
     "textAngular": "^1.5.13",
-    "ngSanitize": "https://github.com/gdi2290/ngSanitize.git#0.0.2"
+    "ngSanitize": "^0.0.2"
   }
 }

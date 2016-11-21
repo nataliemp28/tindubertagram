@@ -14,9 +14,8 @@ ProfileFeedController.$inject = [ '$state', 'ProfileFeed', '$sce' ];
 function ProfileFeedController($state, ProfileFeed, $sce) {
   const profileFeed = this;
 
-  profileFeed.feed = ProfileFeed.query($state.params);
-  angular.forEach(profileFeed.feed, function(post){
-    post.bodyText = $sce.trustAsHtml(post.bodyText);
+  ProfileFeed.query($state.params, (feed) => {
+    profileFeed.feed = feed;
+    profileFeed.all = profileFeed.feed;
   });
-  profileFeed.all = profileFeed.feed;
 }
