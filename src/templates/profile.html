@@ -24,7 +24,7 @@
   </div>
   <toggle is-active="login.isActive" first-value="Feed" second-value="Map"></toggle>
 
-  <create-post ng-if="!userShow.profileIsCurrentUser || !login.isActive"></create-post>
+  <create-post ng-if="userShow.profileIsCurrentUser && !login.isActive"></create-post>
 
 
   <div class="contentSection">
