@@ -16,7 +16,8 @@ function googleMap($window, mapStyles) {
         center: { lat: 22.212328, lng: -2.191592 },
         zoom: 2,
         styles: mapStyles,
-        scrollwheel: false
+        scrollwheel: false,
+        minZoom: 2
       });
 
       const infowindow = new $window.google.maps.InfoWindow();
