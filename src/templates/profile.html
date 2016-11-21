@@ -3,7 +3,7 @@
     <div class="userAndControls">
       <div class="userDetails">
         <div class="profilePic">
-          <img src="{{ userShow.user.image }}" alt="" />
+          <img ng-src="{{ userShow.user.image }}" alt="" />
         </div>
         <div class="textContainer">
           <p>{{ userShow.user.firstName }} {{ userShow.user.lastName }}</p>
@@ -14,7 +14,8 @@
       </div>
       <div class="">
         <button type="button" name="button" ng-if="userShow.profileIsCurrentUser">Edit</button>
-        <button type="button" name="button" ng-if="!userShow.profileIsCurrentUser">Follow</button>
+        <button type="button" name="button" ng-click="userShow.follow({ id: userShow.user._id })" ng-if="!userShow.profileIsCurrentUser && !userShow.followingUser">Follow</button>
+        <button type="button" name="button" ng-click="userShow.follow( {id: userShow.user._id})" ng-if="!userShow.profileIsCurrentUser && userShow.followingUser">Following</button>
       </div>
     </div>
     <div class="socialDetails">

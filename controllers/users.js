@@ -4,7 +4,7 @@ const Post = require('../models/post');
 //FOLLOWERS
 function followers(req, res) {
   // Getting User by current user id, current user id is being attached to req by secureRoutes
-  User.findById(req.user._id, (err) => {
+  User.findById(req.params.id, (err) => {
     if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
     // Getting all users that have the current user's id in their following array
     User.find(({ following: req.user._id }), (err, users) => {
@@ -17,7 +17,7 @@ function followers(req, res) {
 //FOLLOWING
 function following(req, res) {
   // Getting User by current user id, current user id is being attached to req by secureRoutes
-  User.findById(req.user._id, (err, user) => {
+  User.findById(req.params.id, (err, user) => {
     if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
     const followingIds = user.following;
     // Finding the users where their id is contained within the current user's following array
@@ -38,7 +38,6 @@ function posts(req, res) {
     .exec((err, posts) => {
       if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
       if (!posts) return res.status(404).json({ message: 'No posts found.' });
-      console.log(posts);
       return res.status(200).json(posts);
     });
 }
@@ -62,9 +61,26 @@ function feed(req, res) {
   });
 }
 
+// Toggle following
+function toggleFollowing(req, res) {
+  // Getting User by current user id, current user id is being attached to req by secureRoutes
+  User.findById(req.user._id, (err, user) => {
+    if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
+    if (!user) return res.status(404).json({ message: 'No user found.' });
+    if (user.following.indexOf(req.params.id) !== -1){
+
+      const index = user.following.indexOf(req.params.id);
+      user.following.splice(index, 1);
+    } else {
+      user.following.push(req.params.id);
+    }
+    user.save();
+    return res.status(200).json(user);
+  });
+}
+
 //SEARCH
 function usersSearch(req, res) {
-  console.log(req.query);
   User.find( { firstName: new RegExp( req.query.search, 'i')}, (err, users) => {
     if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
     return res.status(200).json(users);
@@ -105,5 +121,6 @@ module.exports = {
   feed: feed,
   posts: posts,
   following: following,
-  followers: followers
+  followers: followers,
+  toggleFollowing: toggleFollowing
 };

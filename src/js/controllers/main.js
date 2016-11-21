@@ -11,6 +11,7 @@ function MainController($auth, $state, $rootScope, User, UserSearch, $scope) {
   if ($auth.getPayload()) {
     const userId = { id: $auth.getPayload()._id };
     this.currentUser = User.get(userId);
+    $rootScope.currentUser = this.currentUser;
   }
 
   main.isLoggedIn = $auth.isAuthenticated;

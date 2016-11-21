@@ -21,7 +21,7 @@ function Router($stateProvider, $urlRouterProvider) {
     templateUrl: '/templates/feed.html',
     controller: 'MainFeedController as mainFeed'
   }).state('profile', {
-    url: '/user/:id',
+    url: '/users/:id',
     templateUrl: '/templates/profile.html',
     controller: 'UserShowController as userShow'
   }).state('map', {
