@@ -14,23 +14,23 @@ User.create([{
   firstName: 'Oli',
   lastName: 'Moore',
   bio: 'I love da cheese',
-  image: '/assets/images/sam.jpg',
-  password: 'examplePassword',
-  passwordConfirmation: 'examplePassword'
+  image: 'https://s3-eu-west-1.amazonaws.com/ga-travel-app/0a6e2580-b003-11e6-a2f4-4d7b4c5808ce.png',
+  password: 'password',
+  passwordConfirmation: 'password'
 },{
   email: 'thea@test.com',
   firstName: 'thea',
   lastName: 'Carter',
   bio: 'I love da cheese too',
-  image: '/assets/images/sam.jpg',
-  password: 'examplePassword',
-  passwordConfirmation: 'examplePassword'
+  image: 'https://s3-eu-west-1.amazonaws.com/ga-travel-app/0a6e2580-b003-11e6-a2f4-4d7b4c5808ce.png',
+  password: 'password',
+  passwordConfirmation: 'password'
 },{
   email: 'nat@test.com',
   firstName: 'nat',
   lastName: 'Pateman',
   bio: 'I also love da cheese',
-  image: '/assets/images/sam.jpg',
+  image: 'https://s3-eu-west-1.amazonaws.com/ga-travel-app/0a6e2580-b003-11e6-a2f4-4d7b4c5808ce.png',
   password: 'password',
   passwordConfirmation: 'password'
 }], (err, users) => {
@@ -39,8 +39,12 @@ User.create([{
 
   Post.create([{
     title: 'Example Post',
-    image: '/assets/images/example.jpg',
-    bodyText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: 'b6caa7a0-affd-11e6-a2f4-4d7b4c5808ce.jpeg',
+    bodyText: `<h1>I can do that</h1>
+<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
+
+<h1>We happy?</h1>
+<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>`,
     user: users[0],
     latlng: {
       lat: 50,
@@ -50,8 +54,12 @@ User.create([{
     likes: null
   },{
     title: 'Example Post 2',
-    image: '/assets/images/example.jpg',
-    bodyText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: 'b6caa7a0-affd-11e6-a2f4-4d7b4c5808ce.jpeg',
+    bodyText: `<h1>I can do that</h1>
+<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
+
+<h1>We happy?</h1>
+<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>`,
     user: users[1],
     latlng: {
       lat: 100,
@@ -61,8 +69,12 @@ User.create([{
     likes: null
   },{
     title: 'Example Post 3',
-    image: '/assets/images/example.jpg',
-    bodyText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: 'b6caa7a0-affd-11e6-a2f4-4d7b4c5808ce.jpeg',
+    bodyText: `<h1>I can do that</h1>
+<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
+
+<h1>We happy?</h1>
+<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>`,
     user: users[2],
     latlng: {
       lat: 50,
@@ -72,8 +84,12 @@ User.create([{
     likes: null
   },{
     title: 'Example Post 4',
-    image: '/assets/images/example.jpg',
-    bodyText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: 'b6caa7a0-affd-11e6-a2f4-4d7b4c5808ce.jpeg',
+    bodyText: `<h1>I can do that</h1>
+<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
+
+<h1>We happy?</h1>
+<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>`,
     user: users[1],
     latlng: {
       lat: 100,
@@ -83,8 +99,12 @@ User.create([{
     likes: null
   },{
     title: 'Example Post 5',
-    image: '/assets/images/example.jpg',
-    bodyText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: 'b6caa7a0-affd-11e6-a2f4-4d7b4c5808ce.jpeg',
+    bodyText: `<h1>I can do that</h1>
+<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
+
+<h1>We happy?</h1>
+<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>`,
     user: users[0],
     latlng: {
       lat: 51.51,
