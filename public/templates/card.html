@@ -1,19 +1,21 @@
-<div ui-sref="show({ id: post._id })">
-  <div class="card-block">
-    <a ui-sref="show({ id: post._id })"><h4 class="card-title">{{ post.title }}</h4></a>
-    <h6 class="card-subtitle text-muted">{{ post.user.firstName }}</h6>
-  </div>
-  <img ng-if="post.image" ng-src="{{ post.image }}">
-  <div class="card-block">
-    <div ng-bind-html="post.bodyText" class="card-text"></div>
-  </div>
-  <div class="socialContainer">
-    <div class="">
-      <img class="icon" src="/assets/images/heart.svg" alt="Logo" />
-      {{ post.likes.length || 0 }}
+<div>
+  <a ui-sref="show({ id: post._id })">
+    <div class="card-block">
+      <h4 class="card-title">{{ post.title }}</h4>
+      <h6 class="card-subtitle text-muted">{{ post.user.firstName }}</h6>
     </div>
-    <div>
-      {{ post.commments.length || 0 }} Comments
+    <img ng-if="post.image" ng-src="{{ post.image }}">
+    <div class="card-block">
+      <div ng-bind-html="post.bodyText" class="card-text"></div>
     </div>
-  </div>
+    <div class="socialContainer">
+      <div class="">
+        <img class="icon" src="/assets/images/heart.svg" alt="Logo" />
+        {{ post.likes.length || 0 }}
+      </div>
+      <div>
+        {{ post.commments.length || 0 }} Comments
+      </div>
+    </div>
+  </a>
 </div>

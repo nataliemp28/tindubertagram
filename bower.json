@@ -18,7 +18,7 @@
   "dependencies": {
     "angular": "^1.5.8",
     "angular-ui-router": "ui-router#^0.3.2",
-    "satellizer": "^0.15.5",
+    "satellizer": "https://github.com/sahat/satellizer.git#0.15.5",
     "angular-resource": "^1.5.8",
     "bootstrap": "4.0.0-alpha.5",
     "bourbon": "^4.2.7",
