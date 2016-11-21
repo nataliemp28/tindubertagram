@@ -1,6 +1,9 @@
-<section>
-  <input type="text" placeholder="Title" ng-model="createPost.post.title">
-  <input type="text" placeholder="Location" ng-model="createPost.post.latlng">
-  <div ta-toolbar="[['h1','h2','h3'],['bold','italics']]" text-angular ng-model="createPost.post.bodyText"></div>
-  <div ng-click="createPost.create()">Submit</div>
+<section ng-controller="UploadController as upload">
+  <form novalidate ng-submit="createPost.create()">
+    <input type="text" placeholder="Title" ng-model="createPost.post.title">
+    <input type="text" placeholder="Location" ng-model="createPost.post.latlng">
+    <drag-drop base64="createPost.post.base64" src="createPost.post.image"></drag-drop>
+    <div ta-toolbar="[['h1','h2','h3'],['bold','italics']]" text-angular ng-model="createPost.post.bodyText"></div>
+    <button>Submit</button>
+  </form>
 </section>

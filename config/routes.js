@@ -4,6 +4,7 @@ const oauthController = require('../controllers/oauth');
 const postsController = require('../controllers/posts');
 const usersController = require('../controllers/users');
 const secureRoute = require('../lib/secureRoute');
+const imageUpload = require('../lib/imageUpload');
 
 router
   .post('/login', authController.login)
@@ -12,12 +13,12 @@ router
   .post('/auth/instagram', oauthController.instagram);
 
 router.route('/posts')
-  .post(postsController.create);
+  .post(secureRoute, imageUpload, postsController.create);
 
 router.route('/posts/:id')
-  .get(postsController.show)
-  .put(postsController.update)
-  .delete(postsController.delete);
+  .get(secureRoute, postsController.show)
+  .put(secureRoute, postsController.update)
+  .delete(secureRoute, postsController.delete);
 
 router.route('/users/feed')
   .get(secureRoute, usersController.feed);

@@ -10,12 +10,9 @@ function MainFeedController($state, MainFeed) {
 }
 
 
-ProfileFeedController.$inject = [ '$state', 'ProfileFeed', '$sce' ];
-function ProfileFeedController($state, ProfileFeed, $sce) {
+ProfileFeedController.$inject = [ '$state', 'ProfileFeed' ];
+function ProfileFeedController($state, ProfileFeed) {
   const profileFeed = this;
 
-  ProfileFeed.query($state.params, (feed) => {
-    profileFeed.feed = feed;
-    profileFeed.all = profileFeed.feed;
-  });
+  profileFeed.all = ProfileFeed.query($state.params);
 }
