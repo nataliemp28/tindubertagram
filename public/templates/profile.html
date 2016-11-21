@@ -19,6 +19,7 @@
       </div>
     </div>
     <div class="socialDetails">
+      {{ userShow.user.following.length }} {{ userShow.followers.length }}
     </div>
   </div>
   <toggle is-active="login.isActive" first-value="Feed" second-value="Map"></toggle>
@@ -28,8 +29,13 @@
 
   <div class="contentSection">
     <div ng-controller="ProfileFeedController as profileFeed" class="feedSection card-container">
-      <div ng-repeat="post in profileFeed.all" class="card">
+      <div ng-if="!login.isActive" ng-repeat="post in profileFeed.all" class="card feedView">
         <card></card>
+      </div>
+      <div ng-if="login.isActive" class="mapView">
+        <section>
+          <google-map></google-map>
+        </section>
       </div>
     </div>
   </div>

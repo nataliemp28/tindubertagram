@@ -32,7 +32,7 @@ function Router($stateProvider, $urlRouterProvider) {
   })
   .state('home', {
     url: '/',
-    templateUrl: '/templates/feed.html'
+    templateUrl: '/templates/home.html'
   });
 
   $urlRouterProvider.otherwise('/');

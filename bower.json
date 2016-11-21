@@ -25,10 +25,5 @@
     "angular-elevator": "*",
     "textAngular": "^1.5.13",
     "ngSanitize": "https://github.com/gdi2290/ngSanitize.git#0.0.2"
-  },
-  "resolutions": {
-    "angular": "^1.5.8",
-    "textAngular": "^1.5.13",
-    "ngSanitize": "^0.0.2"
   }
 }
