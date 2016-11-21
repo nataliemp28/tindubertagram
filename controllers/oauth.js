@@ -59,7 +59,7 @@ function facebook(req, res) {
 function instagram(req, res) {
   //REQUEST AN ACCESS TOKEN
   request.get({
-    url: 'https://api.instagram.com/oauth/authorize/?client_id='+process.env.INSTAGRAM_APP_ID+'&redirect_uri=http://:localhost:8000&response_type=code'
+    url: 'https://api.instagram.com/oauth/authorize/?client_id='+process.env.INSTAGRAM_APP_ID+'&redirect_uri=http://:localhost:8000/&response_type=code'
     // qs: {
     //   code: req.body.code,
     //   client_id: process.env.INSTAGRAM_TRAVEL_APP_ID,
@@ -113,7 +113,6 @@ function instagram(req, res) {
           token
         });
       });
-
     });
   });
 

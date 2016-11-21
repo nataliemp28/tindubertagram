@@ -1,11 +1,6 @@
 angular.module('travelApp')
 .directive('googleMap', googleMap);
 
-//
-// angular.module('ngMap').controller('MyCtrl', function() {
-//   this.address = "Toronto Canada";
-// });
-
 googleMap.$inject = ['$window'];
 function googleMap($window) {
   return {

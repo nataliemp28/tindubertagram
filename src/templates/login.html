@@ -51,15 +51,17 @@
 <button>Login</button>
 </form> -->
 
-<form ng-controller="MainFeedController as mainFeed" ng-if="!login.isActive" novalidate ng-submit="login.submit()">
+<!-- <form ng-controller="MainFeedController as mainFeed" ng-if="!login.isActive" novalidate ng-submit="login.submit()">
 <div class="row">
+
+
+</div> -->
+
+<!-- <form ng-controller="MainFeedController as mainFeed" ng-if="!login.isActive" novalidate ng-submit="login.authenticate('instagram')">
+
+<div class="row"> -->
 
 <button ng-click="login.authenticate('facebook')">Login with Facebook</button>
-</div>
-
-<form ng-controller="MainFeedController as mainFeed" ng-if="!login.isActive" novalidate ng-submit="login.authenticate('instagram')">
-
-<div class="row">
 <button ng-click="login.authenticate('instagram')">Login with Instagram</button>
 </div>
 
