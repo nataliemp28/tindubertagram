@@ -26,5 +26,9 @@
   },
   "resolutions": {
     "angular": "^1.5.8"
+
+    "textAngular": "^1.5.13",
+    "ngSanitize": "^0.0.2"
+
   }
 }

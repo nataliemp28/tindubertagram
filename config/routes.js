@@ -19,16 +19,19 @@ router.route('/posts/:id')
   .put(postsController.update)
   .delete(postsController.delete);
 
-router.route('/user/feed')
+router.route('/users/feed')
   .get(secureRoute, usersController.feed);
 
-router.route('/user/:id/posts')
+router.route('/users/:id/posts')
   .get(secureRoute, usersController.posts);
 
-router.route('/user/following')
+router.route('/users/:id/following')
   .get(secureRoute, usersController.following);
 
-router.route('/user/followers')
+router.route('/users/:id/following/toggle')
+  .put(secureRoute, usersController.toggleFollowing );
+
+router.route('/users/:id/followers')
   .get(secureRoute, usersController.followers);
 
 router.route('/users/:id')

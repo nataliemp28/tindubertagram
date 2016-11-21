@@ -4,10 +4,10 @@ angular.module('travelApp')
 
 MainFeed.$inject = ['$resource'];
 function MainFeed($resource) {
-  return new $resource( '/user/feed' );
+  return new $resource( '/users/feed' );
 }
 
 ProfileFeed.$inject = ['$resource'];
 function ProfileFeed($resource) {
-  return new $resource( '/user/:id/posts', { id: '@_id' } );
+  return new $resource( '/users/:id/posts', { id: '@_id' } );
 }

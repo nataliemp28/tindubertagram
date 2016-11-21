@@ -3,7 +3,6 @@ angular.module('travelApp')
   .controller('ProfileFeedController', ProfileFeedController);
 
 MainFeedController.$inject = [ '$state' , 'MainFeed' ];
-
 function MainFeedController($state, MainFeed) {
   const mainFeed = this;
 
@@ -11,10 +10,13 @@ function MainFeedController($state, MainFeed) {
 }
 
 
-ProfileFeedController.$inject = [ '$state', 'ProfileFeed' ];
-
-function ProfileFeedController($state, ProfileFeed) {
+ProfileFeedController.$inject = [ '$state', 'ProfileFeed', '$sce' ];
+function ProfileFeedController($state, ProfileFeed, $sce) {
   const profileFeed = this;
 
-  profileFeed.all = ProfileFeed.query($state.params);
+  profileFeed.feed = ProfileFeed.query($state.params);
+  angular.forEach(profileFeed.feed, function(post){
+    post.bodyText = $sce.trustAsHtml(post.bodyText);
+  });
+  profileFeed.all = profileFeed.feed;
 }

@@ -10,6 +10,8 @@ const postSchema = new mongoose.Schema({
   latlng: { type: String, required: true },
   comments: [ Comment.schema ],
   likes: [ Like.schema ]
+},{
+  timestamps: true
 });
 
 module.exports = mongoose.model('Post', postSchema);

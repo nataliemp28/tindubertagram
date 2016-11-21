@@ -27,7 +27,7 @@
               Sign in / Register
             </div>
           </a>
-          <div ng-if="main.isLoggedIn()" class="profilePic">
+          <div ng-click="main.navToggle = !main.navToggle" ng-if="main.isLoggedIn()" class="profilePic">
             <img ng-src="{{ main.currentUser.image }}"></img>
           </div>
         </div>
@@ -50,7 +50,7 @@
       </div>
     </header>
 
-    <nav>
+    <nav ng-class="{'active' : main.navToggle}">
       <ul>
         <li><a ui-sref="profile({ id: main.currentUser._id })">Profile</a></li>
         <li ng-click="main.logout()">Logout</li>

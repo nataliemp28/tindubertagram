@@ -12,6 +12,8 @@ const userSchema = new mongoose.Schema({
   instagramId: { type: String },
   passwordHash: { type: String },
   following: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
+},{
+  timestamps: true
 });
 
 function setPassword(value){
