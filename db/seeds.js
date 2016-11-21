@@ -31,8 +31,8 @@ User.create([{
   lastName: 'Pateman',
   bio: 'I also love da cheese',
   image: '/assets/images/sam.jpg',
-  password: 'examplePassword',
-  passwordConfirmation: 'examplePassword'
+  password: 'password',
+  passwordConfirmation: 'password'
 }], (err, users) => {
 
   if(err) return console.log(err);

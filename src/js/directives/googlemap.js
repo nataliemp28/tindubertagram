@@ -29,7 +29,9 @@ function googleMap($window, mapStyles) {
 
         marker.addListener('click', () => {
           infowindow.close();
-          infowindow.setContent(`<h1>${post.title}</h1>`);
+          infowindow.setContent(`<h4>${post.title}</h4><p><img src="${post.image}"></p>
+          <a href="templates/show.html">See more....</a>`);
+
           infowindow.open(map, marker);
         });
       });

@@ -30,7 +30,7 @@ function facebook(req, res) {
       if(!user) {
         user = new User({
           facebookId: profile.id,
-          // profileImage: profile.picture.data.url,
+          image: profile.picture.data.url,
           email: profile.email
           // username: `${profile.name} ${profile.id}`
         });
@@ -87,18 +87,21 @@ function instagram(req, res) {
   }).then((profile) => {
     console.log(profile);
     // find or create a user
-    User.findOne({ instagramId: profile.id }, (err, user) => {
+    User.findOne({ instagramId: profile.user.id }, (err, user) => {
       if(err) return res.status(500).json({error: err });
 
       if(!user) {
+        const nameArr = profile.user.full_name.split(' ');
         user = new User({
-          instagramId: profile.id,
-          // profileImage: profile.picture.data.url,
-          firstName: profile.username
+          firstName: nameArr[0],
+          lastName: nameArr[1],
+          instagramId: profile.user.id,
+          image: profile.user.profile_picture,
+          email: profile.user.username + '@insta.com'
           // username: `${profile.name} ${profile.id}`
         });
       } else {
-        user.instagramId = profile.id;
+        user.instagramId = profile.user.id;
         // user.profileimage = profile.picture.data.url;
       }
       user.save((err, user) => {
