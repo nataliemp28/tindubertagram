@@ -1,6 +1,7 @@
 const Post = require('../models/post');
 
 function postsCreate(req, res) {
+  req.body.image = req.file;
   Post.create(req.body, (err, post) => {
     if (err) return res.status(400).json({ error: err });
     return res.json(post);
