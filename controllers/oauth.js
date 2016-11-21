@@ -26,11 +26,13 @@ function facebook(req, res) {
     //find or create a user
     User.findOne({ email: profile.email }, (err, user) => {
       if(err) return res.status(500).json({error: err });
-
       if(!user) {
+        const nameArr = profile.name.split(' ');
         user = new User({
+          firstName: nameArr[0],
+          lastName: nameArr[1],
           facebookId: profile.id,
-          // profileImage: profile.picture.data.url,
+          image: profile.picture.data.url,
           email: profile.email
           // username: `${profile.name} ${profile.id}`
         });
