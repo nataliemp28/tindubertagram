@@ -2,14 +2,22 @@ angular.module('travelApp')
   .controller('UserShowController', UserShowController)
   .controller('UserEditController', UserEditController);
 
-UserShowController.$inject = ['$state', '$auth', 'User', 'FollowToggle', '$rootScope'];
-function UserShowController($state, $auth, User, FollowToggle, $rootScope) {
+UserShowController.$inject = ['$state', '$auth', 'User', 'FollowToggle', '$rootScope', 'Followers'];
+function UserShowController($state, $auth, User, FollowToggle, $rootScope, Followers) {
   const userShow = this;
 
   userShow.isLoggedIn = $auth.isAuthenticated;
   userShow.user = User.get($state.params);
   userShow.profileIsCurrentUser = false;
   userShow.followingUser = false;
+
+
+  Followers.query($state.params, (data) => {
+    data.$promise.then(function(data) {
+      userShow.followers = data;
+    });
+  });
+
 
   function deleteUser() {
     userShow.user.$remove(() => {

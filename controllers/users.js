@@ -3,30 +3,9 @@ const Post = require('../models/post');
 
 //FOLLOWERS
 function followers(req, res) {
-  // Getting User by current user id, current user id is being attached to req by secureRoutes
-  User.findById(req.params.id, (err) => {
+  User.find(({ following: req.params.id }), (err, users) => {
     if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
-    // Getting all users that have the current user's id in their following array
-    User.find(({ following: req.user._id }), (err, users) => {
-      if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
-      return res.status(200).json(users);
-    });
-  });
-}
-
-//FOLLOWING
-function following(req, res) {
-  // Getting User by current user id, current user id is being attached to req by secureRoutes
-  User.findById(req.params.id, (err, user) => {
-    if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
-    const followingIds = user.following;
-    // Finding the users where their id is contained within the current user's following array
-    User.find({ _id: { $in: followingIds } })
-      .populate('following')
-      .exec((err, users) => {
-        if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
-        return res.status(200).json(users);
-      });
+    return res.status(200).json(users);
   });
 }
 
@@ -120,7 +99,6 @@ module.exports = {
   delete: usersDelete,
   feed: feed,
   posts: posts,
-  following: following,
   followers: followers,
   toggleFollowing: toggleFollowing
 };

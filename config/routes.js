@@ -24,9 +24,6 @@ router.route('/users/feed')
 router.route('/users/:id/posts')
   .get(secureRoute, usersController.posts);
 
-router.route('/users/:id/following')
-  .get(secureRoute, usersController.following);
-
 router.route('/users/:id/following/toggle')
   .put(secureRoute, usersController.toggleFollowing );
 

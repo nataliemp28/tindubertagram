@@ -24,9 +24,6 @@ function Router($stateProvider, $urlRouterProvider) {
     url: '/users/:id',
     templateUrl: '/templates/profile.html',
     controller: 'UserShowController as userShow'
-  }).state('map', {
-    url: '/map',
-    templateUrl: '/templates/map.html'
   }).state('home', {
     url: '/',
     templateUrl: '/templates/feed.html'
