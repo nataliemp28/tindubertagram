@@ -20,13 +20,19 @@ function Router($stateProvider, $urlRouterProvider) {
     url: '/feed',
     templateUrl: '/templates/feed.html',
     controller: 'MainFeedController as mainFeed'
-  }).state('profile', {
+  })
+  .state('profile', {
     url: '/users/:id',
     templateUrl: '/templates/profile.html',
     controller: 'UserShowController as userShow'
-  }).state('home', {
+  })
+  .state('map', {
+    url: '/map',
+    templateUrl: '/templates/map.html'
+  })
+  .state('home', {
     url: '/',
-    templateUrl: '/templates/feed.html'
+    templateUrl: '/templates/home.html'
   });
 
   $urlRouterProvider.otherwise('/');
@@ -41,5 +47,9 @@ function Auth($authProvider) {
 
   $authProvider.facebook({
     clientId: '332198860490764'
+  });
+
+  $authProvider.instagram({
+    clientId: '92e67d01aacb443fa782c92500650463'
   });
 }

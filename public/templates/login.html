@@ -39,6 +39,34 @@
       <button>Register</button>
     </form>
 
-    <button ng-click="login.authenticate('facebook')">Login with Facebook</button>
+
+
+    <!-- <label>Email</label>
+    <input class="u-full-width" type="email" placeholder="Email" ng-model="login.credentials.email">
   </div>
+  <div class="row">
+  <label>Password</label>
+  <input class="u-full-width" type="password" placeholder="Password" ng-model="login.credentials.password">
+</div>
+<button>Login</button>
+</form> -->
+
+<!-- <form ng-controller="MainFeedController as mainFeed" ng-if="!login.isActive" novalidate ng-submit="login.submit()">
+<div class="row">
+
+
+</div> -->
+
+<!-- <form ng-controller="MainFeedController as mainFeed" ng-if="!login.isActive" novalidate ng-submit="login.authenticate('instagram')">
+
+<div class="row"> -->
+
+<button ng-click="login.authenticate('facebook')">Login with Facebook</button>
+<button ng-click="login.authenticate('instagram')">Login with Instagram</button>
+</div>
+
+</form>
+
+
+</div>
 </div>

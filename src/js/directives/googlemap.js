@@ -1,5 +1,5 @@
 angular.module('travelApp')
-  .directive('googleMap', googleMap);
+.directive('googleMap', googleMap);
 
 googleMap.$inject = ['$window'];
 function googleMap($window) {

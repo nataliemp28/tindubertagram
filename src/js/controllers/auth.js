@@ -36,9 +36,12 @@ function LoginController($auth, $state) {
   login.submit = submit;
 
   function authenticate(service) {
-    $auth.authenticate(service, () => {
-      $state.go('usersIndex');
-    });
+    console.log('Authenticating');
+
+    $auth.authenticate(service)
+      .then(() => {
+        $state.go('feed');
+      });
   }
 
   login.authenticate = authenticate;
