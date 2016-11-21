@@ -24,13 +24,14 @@ function googleMap($window, mapStyles) {
       $scope.posts.forEach((post) => {
         const marker = new $window.google.maps.Marker({
           position: post.latlng,
-          map: map
+          map: map,
+          icon: 'assets/images/newicon.png'
         });
 
         marker.addListener('click', () => {
           infowindow.close();
-          infowindow.setContent(`<h4>${post.title}</h4><p><img src="${post.image}"></p>
-          <a href="templates/show.html">See more....</a>`);
+          infowindow.setContent(`<h4>${post.title}</h4><p><img src="${post.image}" class="infoWindowImg"></p>
+          <p>${post._id}</p>`);
 
           infowindow.open(map, marker);
         });
