@@ -6,6 +6,9 @@ const db = require('../config/db');
 
 mongoose.connect(db.uri);
 
+User.collection.drop();
+Post.collection.drop();
+
 User.create([{
   email: 'oli@test.com',
   firstName: 'Oli',
@@ -39,7 +42,10 @@ User.create([{
     image: '/assets/images/example.jpg',
     bodyText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     user: users[0],
-    latlng: 'new lat and lng',
+    latlng: {
+      lat: 50,
+      lng: 0
+    },
     comments: null,
     likes: null
   },{
@@ -47,7 +53,10 @@ User.create([{
     image: '/assets/images/example.jpg',
     bodyText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     user: users[1],
-    latlng: 'new lat and lng',
+    latlng: {
+      lat: 100,
+      lng: 50
+    },
     comments: null,
     likes: null
   },{
@@ -55,7 +64,10 @@ User.create([{
     image: '/assets/images/example.jpg',
     bodyText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     user: users[2],
-    latlng: 'new lat and lng',
+    latlng: {
+      lat: 50,
+      lng: -50
+    },
     comments: null,
     likes: null
   },{
@@ -63,7 +75,10 @@ User.create([{
     image: '/assets/images/example.jpg',
     bodyText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     user: users[1],
-    latlng: 'new lat and lng',
+    latlng: {
+      lat: 100,
+      lng: 100
+    },
     comments: null,
     likes: null
   },{
@@ -71,7 +86,10 @@ User.create([{
     image: '/assets/images/example.jpg',
     bodyText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     user: users[0],
-    latlng: 'new lat and lng',
+    latlng: {
+      lat: 51.51,
+      lng: -0.08
+    },
     comments: null,
     likes: null
   }], () => {

@@ -1,18 +1,24 @@
 angular.module('travelApp')
   .controller('MainController', MainController);
 
-MainController.$inject = ['$auth', '$state', '$rootScope' , 'User', 'UserSearch', '$scope'];
-
-function MainController($auth, $state, $rootScope, User, UserSearch, $scope) {
+MainController.$inject = ['$auth', '$state', '$rootScope' , 'User', '$scope'];
+function MainController($auth, $state, $rootScope, User, $scope) {
   const main = this;
   main.searchBoxOpen = false;
   main.navToggle = false;
 
-  if ($auth.getPayload()) {
-    const userId = { id: $auth.getPayload()._id };
-    this.currentUser = User.get(userId);
-    $rootScope.currentUser = this.currentUser;
+  function getCurrentUser() {
+    if ($auth.getPayload()) {
+      User.get({ id: $auth.getPayload()._id }, (user) => {
+        main.currentUser = user;
+        $rootScope.currentUser = user;
+      });
+    }
   }
+
+  getCurrentUser();
+
+  $rootScope.$on('loggedIn', getCurrentUser);
 
   main.isLoggedIn = $auth.isAuthenticated;
   main.message = null;
@@ -40,7 +46,7 @@ function MainController($auth, $state, $rootScope, User, UserSearch, $scope) {
 
   function search() {
     if (main.searchTerm.length !== 0){
-      main.allUsers = UserSearch.query({search: main.searchTerm });
+      main.allUsers = User.query({search: main.searchTerm });
     } else {
       main.allUsers = 0;
     }

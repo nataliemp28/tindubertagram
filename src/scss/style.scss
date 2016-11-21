@@ -92,6 +92,7 @@ body {
           border-radius: $border-radius-pill;
           padding: 5px 10px;
           cursor: pointer;
+          // text-decoration: none;
           color: $main-teal;
           @include transition(all 200ms ease-in-out);
           &:hover{
@@ -128,10 +129,13 @@ body {
             padding: 5px 10px;
             cursor: pointer;
             color: $main-teal;
+
+
             @include transition(all 200ms ease-in-out);
             &:hover{
               color: white;
               background-color: $main-teal;
+
             }
           }
           .profilePic{
@@ -234,6 +238,7 @@ body {
         width: 150px;
         border-radius: $border-radius-pill;
         background-color: $main-teal;
+        // text-decoration: none;
         @include transition(all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.35));
         position: relative;
         right: 0px;
@@ -310,6 +315,7 @@ body {
     width: 100vw;
     height: 100vh;
     position: absolute;
+    // text-decoration: none;
     z-index: 99;
     background: rgba(0,0,0,0.5);
     top: 0;
