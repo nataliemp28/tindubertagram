@@ -88,18 +88,23 @@ a{
   border-color: rgba(0,0,0,0.2);
 }
 button {
-  padding: 4px 6px 6px 6px;
-  margin: 10px auto 0;
+  padding: 5px 10px;
   border: none;
   display: block;
   -webkit-appearance: none;
   background: white;
-  border: 1px solid #119DA4;
+  border: 1px solid $main-teal;
   border-radius: 500px;
   height: 50px;
-  width: 150px;
-  color: #119DA4;
+  min-width: 150px;
   cursor: pointer;
+  color: $main-teal;
+  @include transition(all 200ms ease-in-out);
+  &:hover{
+    color: white;
+    text-decoration: none;
+    background-color: $main-teal;
+  }
 }
 .u-full-width {
   border: none;
@@ -108,7 +113,7 @@ button {
 header {
   position: fixed;
   top:0;
-  z-index: 10;
+  z-index: 100;
   @include display(flex);
   @include flex-direction(column);
   .projectLogo{
@@ -160,26 +165,12 @@ header {
           }
         }
       }
-      .signIn{
-        border: 1px solid $main-teal;
-        border-radius: $border-radius-pill;
-        padding: 5px 10px;
-        cursor: pointer;
-        text-decoration: none;
-        color: $main-teal;
-        @include transition(all 200ms ease-in-out);
-        &:hover{
-          color: white;
-          text-decoration: none;
-          background-color: $main-teal;
-        }
-      }
     }
   }
   .mainHeader{
     background: white;
     width: 100vw;
-    height: 80px;
+    height: 70px;
     margin: 0;
     padding: 0 25px;
     box-shadow: 0 2px 2px -2px $text-black;
@@ -385,8 +376,9 @@ main{
           .textContainer{
             p{
               margin: 0;
-              font-family: 'montserrat', sans-serif;
+
               &:first-child{
+                font-family: 'montserrat', sans-serif;
                 color: $main-teal;
               }
             }
@@ -411,7 +403,21 @@ main{
         }
       }
       .socialDetails{
-
+        @include display(flex);
+        @include flex-direction(center);
+        @include justify-content(center);
+        width: 100%;
+        div{
+          text-align: center;
+          margin: 0 50px 20px;
+          p{
+            font-family: 'montserrat', sans-serif;
+            &:first-child{
+              font-size: 20px;
+              color: $main-teal;
+            }
+          }
+        }
       }
     }
     .contentSection{
@@ -431,27 +437,37 @@ main{
   opacity: 0.8;
   top: 0;
   left: 0;
-
+  padding-top: 70px;
   @include display(flex);
   @include justify-content(center);
-  @include align-items(center);
+  @include align-items(flex-start);
+  @include transition(all 200ms ease-in-out);
   .formContainer{
     background-color: white;
-    height: 500px;
     width: 500px;
     border-radius: $border-radius-project;
     @include display(flex);
     @include justify-content(flex-start);
     @include align-items(center);
     @include flex-direction(column);
+    .btn-social{
+      margin-bottom: 20px;
+    }
     form{
       position: center;
-
+      div{
+        margin-bottom: 20px;
+      }
+      button{
+        margin: 20px auto;
+      }
       label {
         width: 130px;
       }
       input.u-full-width {
         width: 240px;
+        line-height: 50px;
+        font-family: 'cordalight',serif;
       }
     }
     .toggle-container{

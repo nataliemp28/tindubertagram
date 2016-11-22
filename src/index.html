@@ -21,9 +21,9 @@
           <img class="icon" src="/assets/images/search.svg" ng-click="main.searchBoxOpen = !main.searchBoxOpen" alt="Search" />
 
           <a ng-if="!main.isLoggedIn()" ui-sref="login">
-            <div class="signIn">
+            <button>
               Sign in / Register
-            </div>
+            </button>
           </a>
           <div ng-click="main.navToggle = !main.navToggle" ng-if="main.isLoggedIn()" class="profilePic">
             <img ng-src="{{ main.currentUser.image }}"></img>

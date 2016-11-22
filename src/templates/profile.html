@@ -19,7 +19,22 @@
       </div>
     </div>
     <div class="socialDetails">
-      {{ userShow.user.following.length }} {{ userShow.followers.length }}
+      <div class="">
+        <p>
+          {{ userShow.user.following.length }}
+        </p>
+        <p>
+          Following
+        </p>
+      </div>
+      <div class="">
+        <p>
+          {{ userShow.followers.length }}
+        </p>
+        <p>
+          Followers
+        </p>
+      </div>
     </div>
   </div>
   <toggle is-active="login.isActive" first-value="Feed" second-value="Map"></toggle>
