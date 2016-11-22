@@ -489,7 +489,7 @@ main{
     right: 0;
     bottom: 0;
     background-size: cover;
-
+    background-repeat: no-repeat;
   }
 
 .parallax__layer--fore {
@@ -558,19 +558,27 @@ body {
 
 .parallax {
   font-size: 200%;
+  font-weight: lighter;
+  font-family: 'cordalight',serif;
 }
 
 /* centre the content in the parallax layers */
 .title {
   text-align: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 40;
-  font-weight: 900;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 40px;
+    font-weight: 200;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20vw;
 }
 
 #group1 {
@@ -583,9 +591,6 @@ body {
 
 #group3 {
   z-index: 4; /* slide over group 2 and 4 */
-}
-#group3 .parallax__layer--base {
-  background: rgb(153,216,101);
 }
 
 #group4 {
