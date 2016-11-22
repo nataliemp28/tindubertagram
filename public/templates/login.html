@@ -4,11 +4,9 @@
     <!-- LOGIN FORM -->
     <form ng-controller="LoginController as login" class="loginForm" ng-if="!login.isActive" novalidate ng-submit="login.submit()">
       <div>
-        <label>Email</label>
         <input class="u-full-width" type="email" placeholder="Email" ng-model="login.credentials.email">
       </div>
       <div>
-        <label>Password</label>
         <input class="u-full-width" type="password" placeholder="Password" ng-model="login.credentials.password">
       </div>
       <button>Login</button>
@@ -17,23 +15,18 @@
     <!-- REGISTER FORM -->
     <form ng-controller="RegisterController as register" class="registerForm" ng-if="login.isActive" novalidate ng-submit="register.submit()">
       <div>
-        <label>First Name</label>
         <input class="u-full-width" type="text" placeholder="First Name" ng-model="register.user.firstName">
       </div>
       <div>
-        <label>Last Name</label>
         <input class="u-full-width" type="text" placeholder="Last Name" ng-model="register.user.lastName">
       </div>
       <div>
-        <label>Email</label>
         <input class="u-full-width" type="email" placeholder="yourname@example.com" ng-model="register.user.email">
       </div>
       <div>
-        <label>Password</label>
         <input class="u-full-width" type="password" placeholder="Password" ng-model="register.user.password">
       </div>
       <div>
-        <label>Confirm Password</label>
         <input class="u-full-width" type="password" placeholder="Confirm Password" ng-model="register.user.passwordConfirmation">
       </div>
       <button>Register</button>

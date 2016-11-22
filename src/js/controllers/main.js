@@ -29,11 +29,12 @@ function MainController($auth, $state, $rootScope, User, $scope) {
         $state.go('home');
       });
   }
-  const protectedStates = ['usersEdit', 'usersNew'];
 
+  const protectedStates = ['feed', 'show', 'profile', 'map'];
   function secureState(e, toState) {
     main.message = null;
-    if(!$auth.isAuthenticated && protectedStates.includes(toState.name)) {
+    if(!$auth.isAuthenticated() && protectedStates.includes(toState.name)) {
+      console.log('protected');
       e.preventDefault();
       $state.go('login');
       main.message = 'You must be logged in to go there!';
@@ -41,7 +42,6 @@ function MainController($auth, $state, $rootScope, User, $scope) {
   }
 
   $rootScope.$on('$stateChangeStart', secureState);
-
   main.logout = logout;
 
   function search() {
