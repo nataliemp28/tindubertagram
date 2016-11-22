@@ -60,6 +60,20 @@ a{
     font-weight: lighter;
   }
 }
+.profilePic{
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+  cursor: pointer;
+  img{
+    max-height: 60px;
+    padding: 0!important;
+  }
+}
 .card{
   max-width: 715px;
   margin: .75rem auto 0;
@@ -105,8 +119,8 @@ button {
   background: white;
   border: 1px solid $main-teal;
   border-radius: 500px;
-  height: 50px;
-  min-width: 150px;
+  height: 40px;
+  min-width: 120px;
   cursor: pointer;
   color: $main-teal;
   @include transition(all 200ms ease-in-out);
@@ -168,23 +182,12 @@ header {
         @include display(flex);
         a{
           @include display(flex);
-          .profilePic{
-            margin: auto 20px;
-            border-radius: 50%;
-            height: 50px;
-            width: 50px;
-            overflow: hidden;
-            @include display(flex);
-            @include justify-content(center);
-            @include align-items(center);
-            cursor: pointer;
-            img{
-              max-height: 60px;
-            }
-            border-bottom: 1px solid black;
-          }
+          @include justify-content(center);
+          @include align-items(center);
+          margin: 0 20px;
           p{
             line-height: 60px;
+            margin-left: 20px;
           }
         }
       }
@@ -205,7 +208,7 @@ header {
     div{
       &:nth-child(2){
         @include display(flex);
-        @include justify-content(space-between);
+        @include justify-content(center);
         @include align-items(center);
         @include flex-direction(row);
         .icon, .profilePic {
@@ -225,19 +228,6 @@ header {
             color: white;
             background-color: $main-teal;
 
-          }
-        }
-        .profilePic{
-          border-radius: 50%;
-          height: 50px;
-          width: 50px;
-          overflow: hidden;
-          @include display(flex);
-          @include justify-content(center);
-          @include align-items(center);
-          cursor: pointer;
-          img{
-            max-height: 60px;
           }
         }
       }
@@ -295,8 +285,15 @@ main{
   .card-container{
     .card{
       h4, h5, h6{
-        margin-top: 20px;
         font-weight: normal;
+      }
+      .profilePic{
+        margin-right: 25px;
+      }
+      .userCardSection{
+        @include display(flex);
+        @include align-items(center);
+        @include flex-direction(row);
       }
       .card-subtitle{
         color: $main-teal;
@@ -311,6 +308,9 @@ main{
       img{
         max-width: 100%;
         padding: 0 40px;
+      }
+      .icon{
+          padding: 0;
       }
       .socialContainer{
         @include display(flex);
@@ -394,6 +394,15 @@ main{
         @include align-items(center);
         width: 100%;
         padding: 20px;
+        .followingButton{
+          color: white;
+          background-color: $main-teal;
+          &:hover{
+            color: $main-teal;
+            background-color: white;
+            border: 1px solid $main-teal;
+          }
+        }
         .userDetails{
           @include display(flex);
           @include flex-direction(row);

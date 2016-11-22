@@ -1,8 +1,15 @@
 <div>
   <a ui-sref="show({ id: post._id })">
     <div class="card-block">
-      <h4 class="card-title">{{ post.title }}</h4>
-      <h6 class="card-subtitle">{{ post.user.firstName }}</h6>
+      <div class="userCardSection">
+        <div class="profilePic">
+          <img ng-src="{{ post.user.image }}"></img>
+        </div>
+        <div class="">
+          <h4 class="card-title">{{ post.title }}</h4>
+          <h6 class="card-subtitle">{{ post.user.firstName }}</h6>
+        </div>
+      </div>
     </div>
     <img ng-if="post.image" ng-src="{{ post.image }}">
     <div class="card-block">
