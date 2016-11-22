@@ -367,7 +367,6 @@ body {
     overflow-y: auto;
     -webkit-perspective: 300px;
     perspective: 300px;
-    opacity: 0.8;
   }
 
   .parallax__group {
@@ -384,6 +383,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    background-size: cover;
+
   }
 
   .parallax__layer--fore {
