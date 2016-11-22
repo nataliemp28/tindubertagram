@@ -1,6 +1,7 @@
 <div>
   <a ui-sref="show({ id: post._id })">
     <div class="card-block">
+
       <div class="userCardSection">
         <div class="profilePic">
           <img ng-src="{{ post.user.image }}"></img>
@@ -22,7 +23,7 @@
       {{ post.likes.length || 0 }}
     </div>
     <div>
-      {{ post.comments.length || 0 }} Comments
+      {{ post.createdAt | date:'fullDate' }}
     </div>
   </div>
 </div>

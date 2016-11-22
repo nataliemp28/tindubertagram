@@ -282,6 +282,24 @@ main{
     cursor: pointer;
     color: $hot-grey;
     font-family: cordalight;
+    &.newPost {
+      form {
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        transition: all 1s ease;
+        clear: both;
+      }
+      &.active {
+        h3 {
+          display: none;
+        }
+        form {
+          height: 770px;
+          width: auto;
+        }
+      }
+    }
   }
   .card-container{
     .card{
@@ -678,6 +696,10 @@ footer {
   width: 25vh;
   height: auto;
   padding: 10px;
+  text-align: center;
+
+}
+.infoWindowText {
   text-align: center;
 }
 

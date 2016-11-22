@@ -26,13 +26,13 @@ function googleMap($window, mapStyles) {
         const marker = new $window.google.maps.Marker({
           position: post.latlng,
           map: map,
-          icon: 'assets/images/newicon.png'
+          icon: 'assets/images/newnewicon.png'
         });
 
         marker.addListener('click', () => {
           infowindow.close();
-          infowindow.setContent(`<h4>${post.title}</h4><p><img src="${post.image}" class="infoWindowImg"></p>
-          <p>${post._id}</p>`);
+          infowindow.setContent(`<h6 class="infoWindowText">${post.title}</h6><p><img src="${post.image}" class="infoWindowImg"></p>
+        `);
 
           infowindow.open(map, marker);
         });
