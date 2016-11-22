@@ -8,14 +8,14 @@
     <div class="card-block">
       <div ng-bind-html="post.bodyText" class="card-text"></div>
     </div>
-    <div class="socialContainer">
-      <div class="">
-        <img class="icon" src="/assets/images/heart.svg" alt="Logo" />
-        {{ post.likes.length || 0 }}
-      </div>
-      <div>
-        {{ post.commments.length || 0 }} Comments
-      </div>
-    </div>
   </a>
+  <div class="socialContainer">
+    <div class="">
+      <img class="icon" src="/assets/images/heart.svg" alt="Logo" />
+      {{ post.likes.length || 0 }}
+    </div>
+    <div>
+      {{ post.comments.length || 0 }} Comments
+    </div>
+  </div>
 </div>

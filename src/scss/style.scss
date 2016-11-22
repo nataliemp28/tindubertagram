@@ -18,6 +18,28 @@ body {
   &:hover{
     transform: scale(1.07);
     text-decoration: none;
+
+  a{
+    text-decoration: none!important;
+    color: $text-black;
+    &:hover{
+      h1, h2, h3, h4, h5, h6, p{
+        text-decoration: none!important;
+        color: $text-black;
+      }
+    }
+    h1, h2, h3, h4, h5, h6, p{
+      text-decoration: none!important;
+      color: $text-black;
+    }
+  }
+  .icon{
+    height: 25px;
+    cursor: pointer;
+    @include transition(all 200ms ease-in-out);
+    &:hover{
+      transform: scale(1.07);
+    }
   }
 }
 .ta-editor {
@@ -393,16 +415,14 @@ main{
   height: 600px;
 }
 
-
-.parallax {
-  height: 500px; /* fallback for older browsers */
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-perspective: 300px;
-  perspective: 300px;
-  opacity: 0.8;
-}
+  .parallax {
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+  }
 
 .parallax__group {
   position: relative;
@@ -412,13 +432,15 @@ main{
   transform-style: preserve-3d;
 }
 
-.parallax__layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
+  .parallax__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+
+  }
 
 .parallax__layer--fore {
   -webkit-transform: translateZ(90px) scale(.7);
