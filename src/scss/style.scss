@@ -8,8 +8,20 @@ body {
   font-family: 'montserrat', sans-serif;
   font-weight: lighter;
   margin: 0;
-
-  // Global Styles
+  a{
+    text-decoration: none!important;
+    color: $text-black;
+    &:hover{
+      h1, h2, h3, h4, h5, h6, p{
+        text-decoration: none!important;
+        color: $text-black;
+      }
+    }
+    h1, h2, h3, h4, h5, h6, p{
+      text-decoration: none!important;
+      color: $text-black;
+    }
+  }
   .icon{
     height: 25px;
     cursor: pointer;
