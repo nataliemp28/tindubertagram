@@ -7,6 +7,12 @@ function MainController($auth, $state, $rootScope, User, $scope) {
   main.searchBoxOpen = false;
   main.navToggle = false;
 
+  function closePopups(){
+    main.searchBoxOpen = false;
+    main.navToggle = false;
+  }
+  main.closePopups = closePopups;
+
   function getCurrentUser() {
     if ($auth.getPayload()) {
       User.get({ id: $auth.getPayload()._id }, (user) => {

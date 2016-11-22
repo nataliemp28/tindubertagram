@@ -19,6 +19,12 @@ p{
   letter-spacing: 0.3px;
   line-height: 25px;
 }
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 .icon{
   height: 25px;
   cursor: pointer;
@@ -129,14 +135,14 @@ header {
       width: 230px;
       height: 60px;
       padding: 10px;
-
+      border: none;
     }
     width: 230px;
     background-color: #fff;
     border: none;
     position: relative;
     box-shadow: 0 0px 2px 0px $text-black;
-    right: -50%;
+    right: -73%;
     .searchResults{
       position: relative;;
       top: 0;
@@ -165,6 +171,9 @@ header {
               max-height: 60px;
             }
             border-bottom: 1px solid black;
+          }
+          p{
+            line-height: 60px;
           }
         }
       }
@@ -226,7 +235,7 @@ header {
 }
 nav{
   position: fixed;
-  top: 80px;
+  top: 70px;
   right: 0;
   width: 135px;
   background: white;
@@ -290,6 +299,7 @@ main{
       }
       img{
         max-width: 100%;
+        padding: 0 40px;
       }
       .socialContainer{
         @include display(flex);
@@ -598,6 +608,15 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20vw;
+}
+
+.mainLogo{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 25%;
 }
 
 #group1 {
