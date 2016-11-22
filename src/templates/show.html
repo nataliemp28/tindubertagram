@@ -1,5 +1,10 @@
-<div id="showPost">
-<h1>{{ showPost.post.title }}</h1>
-<h2><img src="{{ showPost.post.image }}" class="showImage"></h2>
-<p ng-bind-html="showPost.post.bodyText"></p>
+<!-- <div class="showPage"> -->
+<div class="card-container">
+  <div class="card showPage">
+    <h4 class="card-title ng-binding">{{ showPost.post.title }}</h4>
+    <img src="{{ showPost.post.image }}">
+    <div class="card-block"<p ng-bind-html="showPost.post.bodyText"></p></div>
+    <card></card>
+  </div>
 </div>
+<!-- </div> -->

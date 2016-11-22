@@ -87,12 +87,14 @@ a{
   color: #fff;
   background-color: #3b5998;
   border-color: rgba(0,0,0,0.2);
+  width: 220px;
 }
 .btn-instagram {
   color: #fff;
   background-color: #3f729b;
   border-color: rgba(0,0,0,0.2);
   margin-top: 20px;
+  width: 220px;
 
 }
 button {
@@ -117,6 +119,15 @@ button {
 .u-full-width {
   border: none;
   border-bottom: 1.5px $main-teal solid;
+}
+
+.showPage {
+  text-align: center;
+  border: none;
+  background-color: white;
+  body {
+    background-color: white !important;
+  }
 }
 
 header {
