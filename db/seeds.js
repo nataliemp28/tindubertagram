@@ -111,11 +111,11 @@ User.create([{
       lng: -0.08
     },
     comments: [{
-      userId: users[0],
+      userId: users[0]._id,
       bodyText: 'Example comment'
     }],
     likes: [{
-      userId: users[0]
+      userId: users[0]._id
     }]
   }], () => {
 
