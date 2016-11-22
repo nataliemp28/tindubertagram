@@ -110,8 +110,13 @@ User.create([{
       lat: 51.51,
       lng: -0.08
     },
-    comments: null,
-    likes: null
+    comments: [{
+      userId: users[0],
+      bodyText: 'Example comment'
+    }],
+    likes: [{
+      userId: users[0]
+    }]
   }], () => {
 
     users[0].following = [users[1], users[2]];

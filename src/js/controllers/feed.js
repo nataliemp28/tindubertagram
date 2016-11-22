@@ -15,4 +15,5 @@ function ProfileFeedController($state, ProfileFeed) {
   const profileFeed = this;
 
   profileFeed.all = ProfileFeed.query($state.params);
+  console.log(profileFeed.all);
 }
