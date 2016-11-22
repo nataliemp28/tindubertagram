@@ -1,3 +1,4 @@
 <h1>SHOWING POST</h1>
 <h1>{{ showPost.post.title }}</h1>
-<p>{{ userPost.post.bodyText }}</p>
+<h2><img src="{{ showPost.post.image }}" class="showImage"></h2>
+<p ng-bind-html="showPost.post.bodyText"></p>

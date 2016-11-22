@@ -1,6 +1,7 @@
 @import "variables";
 @import "fonts";
 @import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
+// @import "bootstrap-social.less";
 
 body {
   background-color: $background-grey;
@@ -8,137 +9,91 @@ body {
   font-family: 'montserrat', sans-serif;
   font-weight: lighter;
   margin: 0;
-
-  // Global Styles
-  .icon{
-    height: 25px;
-    cursor: pointer;
-    @include transition(all 200ms ease-in-out);
-    &:hover{
-      transform: scale(1.07);
-    }
+}
+// Global Styles
+.icon{
+  height: 25px;
+  cursor: pointer;
+  @include transition(all 200ms ease-in-out);
+  &:hover{
+    transform: scale(1.07);
+    text-decoration: none;
   }
-  .ta-editor {
-    min-height: 300px;
-    height: auto;
-    overflow: auto;
-    font-family: inherit;
-    font-size: 100%;
-    margin:20px 0;
+}
+.ta-editor {
+  min-height: 300px;
+  height: auto;
+  overflow: auto;
+  font-family: inherit;
+  font-size: 100%;
+  margin:20px 0;
+}
+.dragDrop{
+  height: 300px;
+  background: white;
+  img{
+    height: 100%;
   }
-  .dragDrop{
-    height: 300px;
-    background: white;
-    img{
-      height: 100%;
-    }
-    &.active{
-      background-color: #ddd;
-    }
+  &.active{
+    background-color: #ddd;
   }
+}
 
-  header {
-    position: fixed;
-    top:0;
-    z-index: 10;
-    @include display(flex);
-    @include flex-direction(column);
-    .searchContainer {
-      input{
-        width: 230px;
-        height: 60px;
-        padding: 10px;
-
-      }
+.btn-facebook {
+  color: #fff;
+  background-color: #3b5998;
+  border-color: rgba(0,0,0,0.2);
+}
+.btn-instagram {
+  color: #fff;
+  background-color: #3f729b;
+  border-color: rgba(0,0,0,0.2);
+}
+button {
+  padding: 4px 6px 6px 6px;
+  margin: 10px auto 0;
+  border: none;
+  display: block;
+}
+.u-full-width {
+  border: none;
+  border-bottom: 1.5px #119DA4 solid;
+}
+header {
+  position: fixed;
+  top:0;
+  z-index: 10;
+  @include display(flex);
+  @include flex-direction(column);
+  .searchContainer {
+    input{
       width: 230px;
-      background-color: #fff;
-      border: none;
-      position: relative;
-      box-shadow: 0 0px 2px 0px $text-black;
-      right: -50%;
-      .searchResults{
-        position: relative;;
-        top: 0;
-        right: 0;
-        .result{
-          width: 230px;
-          background: white;
-          height: 60px;
-          border-top: 1px solid grey;
-          line-height: 60px;
-          text-align: center;
-          @include display(flex);
-          a{
-            @include display(flex);
-            .profilePic{
-              margin: auto 20px;
-              border-radius: 50%;
-              height: 50px;
-              width: 50px;
-              overflow: hidden;
-              @include display(flex);
-              @include justify-content(center);
-              @include align-items(center);
-              cursor: pointer;
-              img{
-                max-height: 60px;
-              }
-              border-bottom: 1px solid black;
-            }
-          }
-        }
-        .signIn{
-          border: 1px solid $main-teal;
-          border-radius: $border-radius-pill;
-          padding: 5px 10px;
-          cursor: pointer;
-          // text-decoration: none;
-          color: $main-teal;
-          @include transition(all 200ms ease-in-out);
-          &:hover{
-            color: white;
-            background-color: $main-teal;
-          }
-        }
-      }
+      height: 60px;
+      padding: 10px;
+
     }
-    .mainHeader{
-      background: white;
-      width: 100vw;
-      height: 80px;
-      margin: 0;
-      padding: 0 25px;
-      box-shadow: 0 2px 2px -2px $text-black;
-      @include display(flex);
-      @include justify-content(space-between);
-      @include align-items(center);
-      @include flex-direction(row);
-      z-index: 10;
-      div{
-        &:nth-child(2){
+    width: 230px;
+    background-color: #fff;
+    border: none;
+    position: relative;
+    box-shadow: 0 0px 2px 0px $text-black;
+    right: -50%;
+    .searchResults{
+      position: relative;;
+      top: 0;
+      right: 0;
+      .result{
+        width: 230px;
+        background: white;
+        height: 60px;
+        border-top: 1px solid grey;
+        line-height: 60px;
+        text-align: center;
+        @include display(flex);
+        a{
           @include display(flex);
-          @include justify-content(space-between);
-          @include align-items(center);
-          @include flex-direction(row);
-          .icon, .profilePic {
-            margin: 0 20px;
-          }
-          .signIn{
-            border: 1px solid $main-teal;
-            border-radius: $border-radius-pill;
-            padding: 5px 10px;
-            cursor: pointer;
-            color: $main-teal;
-
-
-            @include transition(all 200ms ease-in-out);
-            &:hover{
-              color: white;
-              background-color: $main-teal;
-
-            }
-          }
           .profilePic{
+            margin: auto 20px;
             border-radius: 50%;
             height: 50px;
             width: 50px;
@@ -150,345 +105,423 @@ body {
             img{
               max-height: 60px;
             }
+            border-bottom: 1px solid black;
+          }
+        }
+      }
+      .signIn{
+        border: 1px solid $main-teal;
+        border-radius: $border-radius-pill;
+        padding: 5px 10px;
+        cursor: pointer;
+        text-decoration: none;
+        color: $main-teal;
+        @include transition(all 200ms ease-in-out);
+        &:hover{
+          color: white;
+          text-decoration: none;
+          background-color: $main-teal;
+        }
+      }
+    }
+  }
+  .mainHeader{
+    background: white;
+    width: 100vw;
+    height: 80px;
+    margin: 0;
+    padding: 0 25px;
+    box-shadow: 0 2px 2px -2px $text-black;
+    @include display(flex);
+    @include justify-content(space-between);
+    @include align-items(center);
+    @include flex-direction(row);
+    z-index: 10;
+    div{
+      &:nth-child(2){
+        @include display(flex);
+        @include justify-content(space-between);
+        @include align-items(center);
+        @include flex-direction(row);
+        .icon, .profilePic {
+          margin: 0 20px;
+        }
+        .signIn{
+          border: 1px solid $main-teal;
+          text-decoration: none;
+          border-radius: $border-radius-pill;
+          padding: 5px 10px;
+          cursor: pointer;
+          color: $main-teal;
+
+
+          @include transition(all 200ms ease-in-out);
+          &:hover{
+            color: white;
+            background-color: $main-teal;
+
+          }
+        }
+        .profilePic{
+          border-radius: 50%;
+          height: 50px;
+          width: 50px;
+          overflow: hidden;
+          @include display(flex);
+          @include justify-content(center);
+          @include align-items(center);
+          cursor: pointer;
+          img{
+            max-height: 60px;
           }
         }
       }
     }
   }
-  nav{
-    position: fixed;
-    top: 80px;
-    right: 0;
-    width: 135px;
-    background: white;
-    z-index: 99;
-    display: none;
-    &.active{
-      display: block;
-    }
-    ul{
-      list-style: none;
+}
+nav{
+  position: fixed;
+  top: 80px;
+  right: 0;
+  width: 135px;
+  background: white;
+  z-index: 99;
+  display: none;
+  &.active{
+    display: block;
+  }
+  ul{
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    li{
       width: 100%;
-      padding: 0;
-      margin: 0;
-      li{
-        width: 100%;
-        height: 50px;
-        line-height: 50px;
-        border-top: 1px solid grey;
-        text-align: center;
-        a{
-          text-decoration: none;
-          &:hover{
-            text-decoration: none;
-            color: red;
-          }
-        }
+      height: 50px;
+      line-height: 50px;
+      border-top: 1px solid grey;
+      text-align: center;
+      a{
+        text-decoration: none;
         &:hover{
+          text-decoration: none;
           color: red;
         }
       }
-    }
-  }
-  main{
-    padding-top: 20px;
-    margin-top: 80px;
-    height: 200vh;
-    .card-container{
-      .card{
-        img{
-          max-width: 100%;
-        }
-        p{
-          font-family: cordalight, serif;
-        }
-        .socialContainer{
-          @include display(flex);
-          @include justify-content(space-between);
-          @include align-items(center);
-          padding: 0 50px 20px;
-          height: 50px;
-          width: 100%;
-        }
+      &:hover{
+        color: red;
       }
     }
-    .bodyTextInputBox{
-      font-family: cordalight, serif;
-    }
-    .toggle-container{
-      height: 50px;
-      width: 300px;
-      border-radius: $border-radius-pill;
-      background-color: rgba(17, 157, 164 ,0.1);
-      color: $main-teal;
-      cursor: pointer;
-      .full{
-        position: relative;
-        height: 0;
-        line-height: 50px;
+  }
+}
+main{
+  padding-top: 20px;
+  margin-top: 80px;
+  height: 200vh;
+  .card-container{
+    .card{
+      img{
+        max-width: 100%;
+      }
+      p{
+        font-family: cordalight, serif;
+      }
+      .socialContainer{
         @include display(flex);
-        @include justify-content(space-around);
-        z-index: 1;
+        @include justify-content(space-between);
+        @include align-items(center);
+        padding: 0 50px 20px;
+        height: 50px;
+        width: 100%;
+      }
+    }
+  }
+  .bodyTextInputBox{
+    font-family: cordalight, serif;
+  }
+  .toggle-container{
+    height: 50px;
+    width: 300px;
+    border-radius: $border-radius-pill;
+    background-color: rgba(17, 157, 164 ,0.1);
+    color: $main-teal;
+    cursor: pointer;
+    .full{
+      position: relative;
+      height: 0;
+      line-height: 50px;
+      @include display(flex);
+      @include justify-content(space-around);
+      z-index: 1;
+      span{
+        @include transition(all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.35));
+        &:first-child{
+          color: white;
+        }
+      }
+      &.active{
         span{
-          @include transition(all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.35));
           &:first-child{
+            color: $main-teal;
+          }
+          &:nth-child(2){
             color: white;
           }
         }
-        &.active{
-          span{
-            &:first-child{
-              color: $main-teal;
-            }
-            &:nth-child(2){
-              color: white;
-            }
-          }
-        }
-      }
-      .toggle{
-        height: 50px;
-        width: 150px;
-        border-radius: $border-radius-pill;
-        background-color: $main-teal;
-        // text-decoration: none;
-        @include transition(all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.35));
-        position: relative;
-        right: 0px;
-        &.active{
-          right: -150px;
-        }
       }
     }
-    .profileContainer{
-      @include display(flex);
-      @include justify-content(center);
-      @include flex-direction(column);
-      @include align-items(center);
-      .userSection{
-        @include display(flex);
-        @include justify-content(center);
-        @include align-items(flex-start);
-        @include flex-direction(column);
-        width: 600px;
-        background: white;
-        height: 150px;
-        border-radius: 7px;
-        box-shadow: 0px 0px 1px $text-black;
-        font-weight: lighter;
-        .userAndControls{
-          @include display(flex);
-          @include flex-direction(row);
-          @include justify-content(space-between);
-          @include align-items(center);
-          width: 100%;
-          padding: 20px;
-          .userDetails{
-            @include display(flex);
-            @include flex-direction(row);
-            .textContainer{
-              p{
-                margin: 0;
-                &:first-child{
-                  color: $main-teal;
-                }
-              }
-            }
-            .profilePic{
-              border-radius: 50%;
-              height: 50px;
-              width: 50px;
-              overflow: hidden;
-              @include display(flex);
-              @include justify-content(center);
-              @include align-items(center);
-              cursor: pointer;
-              margin-right: 20px;
-              img{
-                max-height: 60px;
-              }
-            }
-            div{
-
-            }
-          }
-        }
-        .socialDetails{
-
-        }
-      }
-      .contentSection{
-        .feedSection{
-
-        }
+    .toggle{
+      height: 50px;
+      width: 150px;
+      border-radius: $border-radius-pill;
+      background-color: $main-teal;
+      // text-decoration: none;
+      @include transition(all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.35));
+      position: relative;
+      right: 0px;
+      &.active{
+        right: -150px;
       }
     }
   }
-  .signInContainer{
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    // text-decoration: none;
-    z-index: 99;
-    background: rgba(0,0,0,0.5);
-    top: 0;
-    left: 0;
+  .profileContainer{
     @include display(flex);
     @include justify-content(center);
+    @include flex-direction(column);
     @include align-items(center);
-    .formContainer{
-      background-color: white;
-      height: 500px;
-      width: 500px;
-      border-radius: $border-radius-project;
+    .userSection{
       @include display(flex);
-      @include justify-content(flex-start);
-      @include align-items(center);
+      @include justify-content(center);
+      @include align-items(flex-start);
       @include flex-direction(column);
-      form{
-        width: 65%;
+      width: 600px;
+      background: white;
+      height: 150px;
+      border-radius: 7px;
+      box-shadow: 0px 0px 1px $text-black;
+      font-weight: lighter;
+      .userAndControls{
+        @include display(flex);
+        @include flex-direction(row);
+        @include justify-content(space-between);
+        @include align-items(center);
+        width: 100%;
+        padding: 20px;
+        .userDetails{
+          @include display(flex);
+          @include flex-direction(row);
+          .textContainer{
+            p{
+              margin: 0;
+              &:first-child{
+                color: $main-teal;
+              }
+            }
+          }
+          .profilePic{
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            overflow: hidden;
+            @include display(flex);
+            @include justify-content(center);
+            @include align-items(center);
+            cursor: pointer;
+            margin-right: 20px;
+            img{
+              max-height: 60px;
+            }
+          }
+          div{
+
+          }
+        }
       }
-      .toggle-container{
-        margin: 50px 0;
+      .socialDetails{
+
+      }
+    }
+    .contentSection{
+      .feedSection{
+
       }
     }
   }
+}
+.signInContainer{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 99;
+  background-image: url('../assets/images/fishermanhomepage.jpg');
+  background-size: cover;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
 
-  .google-map {
-    width: 800px;
-    height: 600px;
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+  .formContainer{
+    background-color: white;
+    height: 500px;
+    width: 500px;
+
+    border-radius: $border-radius-project;
+    @include display(flex);
+    @include justify-content(flex-start);
+    @include align-items(center);
+    @include flex-direction(column);
+    form{
+      position: center;
+
+      label {
+        width: 140px;
+      }
+      input.u-full-width {
+        width: 240px;
+      }
+    }
+    .toggle-container{
+      margin: 50px 0;
+    }
   }
+}
 
-
-  .parallax {
-    height: 500px; /* fallback for older browsers */
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-perspective: 300px;
-    perspective: 300px;
-    opacity: 0.8;
-  }
-
-  .parallax__group {
-    position: relative;
-    height: 500px; /* fallback for older browsers */
-    height: 100vh;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-
-  .parallax__layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-
-  .parallax__layer--fore {
-    -webkit-transform: translateZ(90px) scale(.7);
-    transform: translateZ(90px) scale(.7);
-    z-index: 1;
-  }
-
-  .parallax__layer--base {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    z-index: 4;
-  }
-
-  .parallax__layer--back {
-    -webkit-transform: translateZ(-300px) scale(2);
-    transform: translateZ(-300px) scale(2);
-    z-index: 3;
-  }
-
-  .parallax__layer--deep {
-    -webkit-transform: translateZ(-600px) scale(3);
-    // transform: translateZ(-600
+.google-map {
+  width: 800px;
+  height: 600px;
 }
 
 
-  .debug {
-    position: fixed;
-    top: 0;
-    left: .5em;
-    z-index: 999;
-    background: rgba(0,0,0,.85);
-    color: #fff;
-    padding: .5em;
-    border-radius: 0 0 5px 5px;
-  }
-  .debug-on .parallax__group {
-    -webkit-transform: translate3d(800px, 0, -800px) rotateY(30deg);
-    transform: translate3d(700px, 0, -800px) rotateY(30deg);
- }
-  .debug-on .parallax__layer {
-    box-shadow: 0 0 0 2px #000;
-    opacity: 0.9;
-  }
-  .parallax__group {
-    -webkit-transition: -webkit-transform 0.5s;
-    transition: transform 0.5s;
-  }
+.parallax {
+  height: 500px; /* fallback for older browsers */
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+  opacity: 0.8;
+}
+
+.parallax__group {
+  position: relative;
+  height: 500px; /* fallback for older browsers */
+  height: 100vh;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.parallax__layer--fore {
+  -webkit-transform: translateZ(90px) scale(.7);
+  transform: translateZ(90px) scale(.7);
+  z-index: 1;
+}
+
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 4;
+}
+
+.parallax__layer--back {
+  -webkit-transform: translateZ(-300px) scale(2);
+  transform: translateZ(-300px) scale(2);
+  z-index: 3;
+}
+
+.parallax__layer--deep {
+  -webkit-transform: translateZ(-600px) scale(3);
+  // transform: translateZ(-600
+}
 
 
-  /* demo styles
-  --------------------------------------------- */
+.debug {
+  position: fixed;
+  top: 0;
+  left: .5em;
+  z-index: 999;
+  background: rgba(0,0,0,.85);
+  color: #fff;
+  padding: .5em;
+  border-radius: 0 0 5px 5px;
+}
+.debug-on .parallax__group {
+  -webkit-transform: translate3d(800px, 0, -800px) rotateY(30deg);
+  transform: translate3d(700px, 0, -800px) rotateY(30deg);
+}
+.debug-on .parallax__layer {
+  box-shadow: 0 0 0 2px #000;
+  // opacity: 0.9;
+}
+.parallax__group {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
 
-  body, html {
-    overflow: hidden;
-  }
 
-  body {
-    font: 100% / 1.5 Arial;
-  }
+/* demo styles
+--------------------------------------------- */
 
-  * {
-    margin:0;
-    padding:0;
-  }
+body, html {
+  overflow: hidden;
+}
 
-  .parallax {
-    font-size: 200%;
-  }
+body {
+  font: 100% / 1.5 Arial;
+}
 
-   /* centre the content in the parallax layers */
-  .title {
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 36;
-    font-weight: bold;
-  }
+* {
+  margin:0;
+  padding:0;
+}
 
-  #group1 {
-    z-index: 5; /* slide over group 2 */
-  }
+.parallax {
+  font-size: 200%;
+}
 
-  #group2 {
-    z-index: 3; /* slide under groups 1 and 3 */
-  }
+/* centre the content in the parallax layers */
+.title {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 40;
+  font-weight: 900;
+}
 
-  #group3 {
-    z-index: 4; /* slide over group 2 and 4 */
-  }
-  #group3 .parallax__layer--base {
-    background: rgb(153,216,101);
-  }
+#group1 {
+  z-index: 5; /* slide over group 2 */
+}
 
-  #group4 {
-    z-index: 2; /* slide under group 3 and 5 */
-  }
+#group2 {
+  z-index: 3; /* slide under groups 1 and 3 */
+}
 
-  #group5 {
-    z-index: 3;
-  }
+#group3 {
+  z-index: 4; /* slide over group 2 and 4 */
+}
+#group3 .parallax__layer--base {
+  background: rgb(153,216,101);
+}
+
+#group4 {
+  z-index: 2; /* slide under group 3 and 5 */
+}
+
+#group5 {
+  z-index: 3;
 }
 
 .parallax {
@@ -510,4 +543,8 @@ footer {
   padding: 10px;
   text-align: center;
 
+}
+.showImage {
+  height: 100vh;
+  width: 100vw;
 }

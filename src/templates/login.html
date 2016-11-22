@@ -3,11 +3,11 @@
     <toggle is-active="login.isActive" first-value="Login" second-value="Register"></toggle>
     <!-- LOGIN FORM -->
     <form ng-controller="LoginController as login" class="loginForm" ng-if="!login.isActive" novalidate ng-submit="login.submit()">
-      <div class="row">
+      <div>
         <label>Email</label>
         <input class="u-full-width" type="email" placeholder="Email" ng-model="login.credentials.email">
       </div>
-      <div class="row">
+      <div>
         <label>Password</label>
         <input class="u-full-width" type="password" placeholder="Password" ng-model="login.credentials.password">
       </div>
@@ -16,57 +16,34 @@
 
     <!-- REGISTER FORM -->
     <form ng-controller="RegisterController as register" class="registerForm" ng-if="login.isActive" novalidate ng-submit="register.submit()">
-      <div class="row">
+      <div>
         <label>First Name</label>
         <input class="u-full-width" type="text" placeholder="First Name" ng-model="register.user.firstName">
       </div>
-      <div class="row">
+      <div>
         <label>Last Name</label>
         <input class="u-full-width" type="text" placeholder="Last Name" ng-model="register.user.lastName">
       </div>
-      <div class="row">
+      <div>
         <label>Email</label>
-        <input class="u-full-width" type="email" placeholder="Email" ng-model="register.user.email">
+        <input class="u-full-width" type="email" placeholder="yourname@example.com" ng-model="register.user.email">
       </div>
-      <div class="row">
+      <div>
         <label>Password</label>
         <input class="u-full-width" type="password" placeholder="Password" ng-model="register.user.password">
       </div>
-      <div class="row">
-        <label>Password Confirmation</label>
-        <input class="u-full-width" type="password" placeholder="Password Confirmation" ng-model="register.user.passwordConfirmation">
+      <div>
+        <label>Confirm Password</label>
+        <input class="u-full-width" type="password" placeholder="Confirm Password" ng-model="register.user.passwordConfirmation">
       </div>
       <button>Register</button>
     </form>
 
 
-
-    <!-- <label>Email</label>
-    <input class="u-full-width" type="email" placeholder="Email" ng-model="login.credentials.email">
-  </div>
-  <div class="row">
-  <label>Password</label>
-  <input class="u-full-width" type="password" placeholder="Password" ng-model="login.credentials.password">
-</div>
-<button>Login</button>
-</form> -->
-
-<!-- <form ng-controller="MainFeedController as mainFeed" ng-if="!login.isActive" novalidate ng-submit="login.submit()">
-<div class="row">
+<button ng-click="login.authenticate('instagram')" class="btn btn-social btn-instagram">Sign in with Instagram</button>
 
 
-</div> -->
-
-<!-- <form ng-controller="MainFeedController as mainFeed" ng-if="!login.isActive" novalidate ng-submit="login.authenticate('instagram')">
-
-<div class="row"> -->
-
-<button ng-click="login.authenticate('facebook')">Login with Facebook</button>
-<button ng-click="login.authenticate('instagram')">Login with Instagram</button>
-</div>
-
-</form>
-
+<button ng-click="login.authenticate('facebook')" class="btn btn-social btn-facebook">Sign in with Facebook</button>
 
 </div>
 </div>
