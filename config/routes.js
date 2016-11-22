@@ -18,6 +18,7 @@ router.route('/posts')
 router.route('/posts/:id')
   .get(secureRoute, postsController.show)
   .put(secureRoute, postsController.update)
+  .patch(secureRoute, postsController.update)
   .delete(secureRoute, postsController.delete);
 
 router.route('/users/feed')

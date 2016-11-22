@@ -49,7 +49,6 @@ body {
       background-color: #ddd;
     }
   }
-
   header {
     position: fixed;
     top:0;
@@ -340,7 +339,7 @@ body {
   .signInContainer{
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     // text-decoration: none;
     z-index: 99;
     background: rgba(0,0,0,0.5);

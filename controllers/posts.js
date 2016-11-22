@@ -24,14 +24,10 @@ function postsShow(req, res) {
 }
 
 function postsUpdate(req, res) {
-  Post.findById(req.params.id, (err, post) => {
+  Post.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, post) => {
     if (err) return res.status(500).json({ error: err });
     if (!post) return res.status(404).json({ error: 'Not Found!' });
-
-    post.save((err, post) => {
-      if (err) return res.status(400).json({ error: err });
-      res.json(post);
-    });
+    return res.status(200).json(post);
   });
 }
 

@@ -9,9 +9,9 @@
       <div ng-bind-html="post.bodyText" class="card-text"></div>
     </div>
   </a>
-  <div class="socialContainer">
+  <div ng-controller="SocialController as social" class="socialContainer">
     <div class="">
-      <img class="icon" src="/assets/images/heart.svg" alt="Logo" />
+      <img ng-click="social.addLike(post.id)" class="icon" src="/assets/images/heart.svg" alt="Logo" />
       {{ post.likes.length || 0 }}
     </div>
     <div>
