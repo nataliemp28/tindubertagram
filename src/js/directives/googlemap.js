@@ -14,10 +14,10 @@ function googleMap($window, mapStyles) {
 
       const map = new $window.google.maps.Map(element[0], {
         center: { lat: 22.212328, lng: -2.191592 },
-        zoom: 2,
+        zoom: 3,
         styles: mapStyles,
         scrollwheel: false,
-        minZoom: 2
+        minZoom: 3
       });
 
       const infowindow = new $window.google.maps.InfoWindow();

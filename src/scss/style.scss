@@ -19,6 +19,12 @@ p{
   letter-spacing: 0.3px;
   line-height: 25px;
 }
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 .icon{
   height: 25px;
   cursor: pointer;
@@ -52,6 +58,20 @@ a{
     text-decoration: none!important;
     color: $text-black;
     font-weight: lighter;
+  }
+}
+.profilePic{
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+  cursor: pointer;
+  img{
+    max-height: 60px;
+    padding: 0!important;
   }
 }
 .card{
@@ -99,8 +119,8 @@ button {
   background: white;
   border: 1px solid $main-teal;
   border-radius: 500px;
-  height: 50px;
-  min-width: 150px;
+  height: 40px;
+  min-width: 120px;
   cursor: pointer;
   color: $main-teal;
   @include transition(all 200ms ease-in-out);
@@ -140,14 +160,14 @@ header {
       width: 230px;
       height: 60px;
       padding: 10px;
-
+      border: none;
     }
     width: 230px;
     background-color: #fff;
     border: none;
     position: relative;
     box-shadow: 0 0px 2px 0px $text-black;
-    right: -50%;
+    right: -73%;
     .searchResults{
       position: relative;;
       top: 0;
@@ -162,20 +182,12 @@ header {
         @include display(flex);
         a{
           @include display(flex);
-          .profilePic{
-            margin: auto 20px;
-            border-radius: 50%;
-            height: 50px;
-            width: 50px;
-            overflow: hidden;
-            @include display(flex);
-            @include justify-content(center);
-            @include align-items(center);
-            cursor: pointer;
-            img{
-              max-height: 60px;
-            }
-            border-bottom: 1px solid black;
+          @include justify-content(center);
+          @include align-items(center);
+          margin: 0 20px;
+          p{
+            line-height: 60px;
+            margin-left: 20px;
           }
         }
       }
@@ -196,7 +208,7 @@ header {
     div{
       &:nth-child(2){
         @include display(flex);
-        @include justify-content(space-between);
+        @include justify-content(center);
         @include align-items(center);
         @include flex-direction(row);
         .icon, .profilePic {
@@ -218,26 +230,13 @@ header {
 
           }
         }
-        .profilePic{
-          border-radius: 50%;
-          height: 50px;
-          width: 50px;
-          overflow: hidden;
-          @include display(flex);
-          @include justify-content(center);
-          @include align-items(center);
-          cursor: pointer;
-          img{
-            max-height: 60px;
-          }
-        }
       }
     }
   }
 }
 nav{
   position: fixed;
-  top: 80px;
+  top: 70px;
   right: 0;
   width: 135px;
   background: white;
@@ -304,8 +303,15 @@ main{
   .card-container{
     .card{
       h4, h5, h6{
-        margin-top: 20px;
         font-weight: normal;
+      }
+      .profilePic{
+        margin-right: 25px;
+      }
+      .userCardSection{
+        @include display(flex);
+        @include align-items(center);
+        @include flex-direction(row);
       }
       .card-subtitle{
         color: $main-teal;
@@ -319,6 +325,10 @@ main{
       }
       img{
         max-width: 100%;
+        padding: 0 40px;
+      }
+      .icon{
+          padding: 0;
       }
       .socialContainer{
         @include display(flex);
@@ -402,6 +412,15 @@ main{
         @include align-items(center);
         width: 100%;
         padding: 20px;
+        .followingButton{
+          color: white;
+          background-color: $main-teal;
+          &:hover{
+            color: $main-teal;
+            background-color: white;
+            border: 1px solid $main-teal;
+          }
+        }
         .userDetails{
           @include display(flex);
           @include flex-direction(row);
@@ -627,6 +646,15 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20vw;
+}
+
+.mainLogo{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 25%;
 }
 
 #group1 {

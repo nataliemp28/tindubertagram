@@ -17,7 +17,7 @@
         <!-- <button type="button" name="button" ng-if="userShow.profileIsCurrentUser" ng-click="main.editActive = !main.editActive"></button> -->
 
         <button type="button" name="button" ng-click="userShow.follow({ id: userShow.user._id })" ng-if="!userShow.profileIsCurrentUser && !userShow.followingUser">Follow</button>
-        <button type="button" name="button" ng-click="userShow.follow( {id: userShow.user._id})" ng-if="!userShow.profileIsCurrentUser && userShow.followingUser">Following</button>
+        <button class="followingButton" type="button" name="button" ng-click="userShow.follow( {id: userShow.user._id})" ng-if="!userShow.profileIsCurrentUser && userShow.followingUser">Following</button>
       </div>
     </div>
     <div class="socialDetails">
