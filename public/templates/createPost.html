@@ -1,6 +1,6 @@
-<section class="card inputBox" ng-controller="UploadController as upload">
+<section class="card inputBox newPost" ng-controller="UploadController as upload" ng-class="{active: createPost.formVisible}" ng-click="createPost.toggleForm()">
   <h3>Add a new post...</h3>
-  <form ng-show="false" novalidate ng-submit="createPost.create()">
+  <form novalidate ng-submit="createPost.create()">
     <input type="text" placeholder="Title" ng-model="createPost.post.title">
     <input type="text" placeholder="Lat" ng-model="createPost.post.latlng.lat">
     <input type="text" placeholder="Lng" ng-model="createPost.post.latlng.lng">

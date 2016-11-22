@@ -61,19 +61,19 @@ User.create([{
 
 <h1>Burgundy</h1>
 <p>Burgundy is a historical region in east-central France. It's famous for its Burgundy wines as well as Pinot Noirs and Chardonnays, Chablis and Beaujolais. The area is crisscrossed by a network of canals and studded with grand châteaux, some now luxury hotels. The capital, Dijon, of mustard fame, is home to the imposing Palace of the Dukes, where the distinguished Musée des Beaux-Arts was established in 1787.</p>`,
-    user: users[1],
+    user: users[2],
     latlng: {
       lat: 47.0525,
       lng: 4.3837
     },
     comments: null,
-    likes: 4
+    likes: null
   },
 
   {
     title: 'A Jolly to Iceland',
     image: 'iceland.jpeg',
-    bodyText: `<h1>Crazy cracy cold!</h1>
+    bodyText: `<h1>Crazy crazy cold!</h1>
   <p>Iceland, a Nordic island nation, is defined by its dramatic landscape with volcanoes, geysers, hot springs and lava fields. Massive glaciers are protected in Vatnajökull and Snæfellsjökull national parks. Most of the population lives in the capital, Reykjavik, which runs on geothermal power and is home to the National and Saga museums, tracing Iceland’s Viking history.</p>`,
     user: users[2],
     latlng: {
@@ -81,7 +81,7 @@ User.create([{
       lng: 19.0208
     },
     comments: null,
-    likes: 2
+    likes: null
   },
 
   {
@@ -95,7 +95,7 @@ User.create([{
       lng: 30.7133
     },
     comments: null,
-    likes: 7
+    likes: null
   },
 
   {
@@ -109,7 +109,7 @@ User.create([{
       lng: 9.0129
     },
     comments: null,
-    likes: 1
+    likes: null
   },
 
 
