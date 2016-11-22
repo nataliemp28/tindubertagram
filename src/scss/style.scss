@@ -10,6 +10,15 @@ body {
   margin: 0;
 
 // Global Styles
+h1, h2, h3, h4, h5, h6, p{
+  color: $text-black;
+  font-weight: lighter;
+}
+p{
+  font-family: 'cordalight',serif;
+  letter-spacing: 0.3px;
+  line-height: 25px;
+}
 .icon{
   height: 25px;
   cursor: pointer;
@@ -17,21 +26,6 @@ body {
   &:hover{
     transform: scale(1.07);
     text-decoration: none;
-
-    a{
-      text-decoration: none!important;
-      color: $text-black;
-      &:hover{
-        h1, h2, h3, h4, h5, h6, p{
-          text-decoration: none!important;
-          color: $text-black;
-        }
-      }
-      h1, h2, h3, h4, h5, h6, p{
-        text-decoration: none!important;
-        color: $text-black;
-      }
-    }
     .icon{
       height: 25px;
       cursor: pointer;
@@ -41,6 +35,27 @@ body {
       }
     }
   }
+}
+h1{
+  margin: 25px 0;
+}
+a{
+  text-decoration: none!important;
+  color: $text-black;
+  &:hover{
+    h1, h2, h3, h4, h5, h6, p{
+      text-decoration: none!important;
+      color: $text-black;
+    }
+  }
+  h1, h2, h3, h4, h5, h6, p{
+    text-decoration: none!important;
+    color: $text-black;
+    font-weight: lighter;
+  }
+}
+.card{
+  max-width: 715px;
 }
 .ta-editor {
   min-height: 300px;
@@ -76,10 +91,18 @@ button {
   margin: 10px auto 0;
   border: none;
   display: block;
+  -webkit-appearance: none;
+  background: white;
+  border: 1px solid #119DA4;
+  border-radius: 500px;
+  height: 50px;
+  width: 150px;
+  color: #119DA4;
+  cursor: pointer;
 }
 .u-full-width {
   border: none;
-  border-bottom: 1.5px #119DA4 solid;
+  border-bottom: 1.5px $main-teal solid;
 }
 header {
   position: fixed;
@@ -87,6 +110,11 @@ header {
   z-index: 10;
   @include display(flex);
   @include flex-direction(column);
+  .projectLogo{
+    font-family: cordalight;
+    letter-spacing: 4px;
+    font-size: 40px;
+  }
   .searchContainer {
     input{
       width: 230px;
@@ -239,14 +267,34 @@ nav{
 main{
   padding-top: 20px;
   margin-top: 80px;
-  height: 200vh;
+  .inputBox{
+    width: 100%;
+    min-height: 100px;
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    cursor: pointer;
+    color: $hot-grey;
+    font-family: cordalight;
+  }
   .card-container{
     .card{
+      h4, h5, h6{
+        margin-top: 20px;
+        font-weight: normal;
+      }
+      .card-subtitle{
+        color: $main-teal;
+        font-weight: lighter;
+      }
+      .card-text:last-child{
+        padding: 0 25px;
+        max-height: 150px;
+        overflow: hidden;
+        margin-bottom: 30px;
+      }
       img{
         max-width: 100%;
-      }
-      p{
-        font-family: cordalight, serif;
       }
       .socialContainer{
         @include display(flex);
@@ -268,6 +316,7 @@ main{
     background-color: rgba(17, 157, 164 ,0.1);
     color: $main-teal;
     cursor: pointer;
+    margin: 25px 0;
     .full{
       position: relative;
       height: 0;
@@ -297,7 +346,6 @@ main{
       width: 150px;
       border-radius: $border-radius-pill;
       background-color: $main-teal;
-      // text-decoration: none;
       @include transition(all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.35));
       position: relative;
       right: 0px;
@@ -316,10 +364,11 @@ main{
       @include justify-content(center);
       @include align-items(flex-start);
       @include flex-direction(column);
-      width: 600px;
+      width: 100%;
+      max-width: 715px;
       background: white;
       height: 150px;
-      border-radius: 7px;
+      border-radius: .25rem;
       box-shadow: 0px 0px 1px $text-black;
       font-weight: lighter;
       .userAndControls{
@@ -335,6 +384,7 @@ main{
           .textContainer{
             p{
               margin: 0;
+              font-family: 'montserrat', sans-serif;
               &:first-child{
                 color: $main-teal;
               }
@@ -388,7 +438,6 @@ main{
     background-color: white;
     height: 500px;
     width: 500px;
-
     border-radius: $border-radius-project;
     @include display(flex);
     @include justify-content(flex-start);
@@ -411,7 +460,7 @@ main{
 }
 
 .google-map {
-  width: 800px;
+  width: 100vw;
   height: 600px;
 }
 

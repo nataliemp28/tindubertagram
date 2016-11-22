@@ -2,16 +2,16 @@
   <a ui-sref="show({ id: post._id })">
     <div class="card-block">
       <h4 class="card-title">{{ post.title }}</h4>
-      <h6 class="card-subtitle text-muted">{{ post.user.firstName }}</h6>
+      <h6 class="card-subtitle">{{ post.user.firstName }}</h6>
     </div>
     <img ng-if="post.image" ng-src="{{ post.image }}">
     <div class="card-block">
       <div ng-bind-html="post.bodyText" class="card-text"></div>
     </div>
   </a>
-  <div class="socialContainer">
+  <div ng-controller="SocialController as social" class="socialContainer">
     <div class="">
-      <img class="icon" src="/assets/images/heart.svg" alt="Logo" />
+      <img ng-click="social.addLike(post.id)" class="icon" src="/assets/images/heart.svg" alt="Logo" />
       {{ post.likes.length || 0 }}
     </div>
     <div>
