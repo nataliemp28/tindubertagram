@@ -56,6 +56,7 @@ a{
 }
 .card{
   max-width: 715px;
+  margin: .75rem auto 0;
 }
 .ta-editor {
   min-height: 300px;
@@ -249,17 +250,17 @@ nav{
       width: 100%;
       height: 50px;
       line-height: 50px;
-      border-top: 1px solid grey;
+      border-top: 1px solid $hot-grey;
       text-align: center;
       a{
         text-decoration: none;
         &:hover{
           text-decoration: none;
-          color: red;
+          color: $main-teal;
         }
       }
       &:hover{
-        color: red;
+        color: $main-teal;
       }
     }
   }
