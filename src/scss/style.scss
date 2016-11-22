@@ -1,7 +1,6 @@
 @import "variables";
 @import "fonts";
 @import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
-// @import "bootstrap-social.less";
 
 body {
   background-color: $background-grey;
@@ -9,7 +8,7 @@ body {
   font-family: 'montserrat', sans-serif;
   font-weight: lighter;
   margin: 0;
-}
+
 // Global Styles
 .icon{
   height: 25px;
@@ -19,26 +18,27 @@ body {
     transform: scale(1.07);
     text-decoration: none;
 
-  a{
-    text-decoration: none!important;
-    color: $text-black;
-    &:hover{
+    a{
+      text-decoration: none!important;
+      color: $text-black;
+      &:hover{
+        h1, h2, h3, h4, h5, h6, p{
+          text-decoration: none!important;
+          color: $text-black;
+        }
+      }
       h1, h2, h3, h4, h5, h6, p{
         text-decoration: none!important;
         color: $text-black;
       }
     }
-    h1, h2, h3, h4, h5, h6, p{
-      text-decoration: none!important;
-      color: $text-black;
-    }
-  }
-  .icon{
-    height: 25px;
-    cursor: pointer;
-    @include transition(all 200ms ease-in-out);
-    &:hover{
-      transform: scale(1.07);
+    .icon{
+      height: 25px;
+      cursor: pointer;
+      @include transition(all 200ms ease-in-out);
+      &:hover{
+        transform: scale(1.07);
+      }
     }
   }
 }
@@ -398,7 +398,7 @@ main{
       position: center;
 
       label {
-        width: 140px;
+        width: 130px;
       }
       input.u-full-width {
         width: 240px;
@@ -553,6 +553,7 @@ body {
   bottom: 0;
   right: 0;
 }
+
 footer {
   font-size: 16px;
   color: #119DA4;
@@ -564,9 +565,10 @@ footer {
   height: auto;
   padding: 10px;
   text-align: center;
-
 }
+
 .showImage {
   height: 100vh;
   width: 100vw;
+}
 }
