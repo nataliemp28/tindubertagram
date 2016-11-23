@@ -30,11 +30,13 @@ function validatePassword(password){
 
 function addImagePath(image){
   if (!image) return null;
+  if(image.match(/^http/)) return image;
   return `https://s3-eu-west-1.amazonaws.com/ga-travel-app/${image}`;
 }
 
 function removeImagePath(fullPath){
-  return fullPath.split('/').splice(-1)[0];
+  if(fullPath.match(/amazonaws/)) return fullPath.split('/').splice(-1)[0];
+  return fullPath;
 }
 
 userSchema
