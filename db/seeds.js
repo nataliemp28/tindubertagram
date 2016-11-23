@@ -116,47 +116,54 @@ User.create([{
 
 
   {
-    title: 'Example Post 2',
-    image: 'b6caa7a0-affd-11e6-a2f4-4d7b4c5808ce.jpeg',
-    bodyText: `<h1>I can do that</h1>
-<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
-
-<h1>We happy?</h1>
-<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>`,
+    title: 'Hiriketiya Beach, Sri Lanka',
+    image: 'sri.jpg',
+    bodyText: `<h1>3 days in paradise...</h1>
+<p>Hiriketiya Bay is the hidden gem of Sri Lanka's south coast. A little horseshoe bay with good surf year round for all levels in the perfect paradise...</p>`,
     user: users[1],
     latlng: {
-      lat: 100,
-      lng: 50
+      lat: 5.963430,
+      lng: 80.703120
     },
     comments: null,
     likes: null
   },{
-    title: 'Example Post 3',
-    image: 'b6caa7a0-affd-11e6-a2f4-4d7b4c5808ce.jpeg',
-    bodyText: `<h1>I can do that</h1>
-<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
+    title: 'Nine Arch Bridge',
+    image: 'ninearch.jpg',
+    bodyText: `<h1>Day One</h1>
+<p>This viaduct was built at Gotuwala between the two railway stations – Ella and Demodara during the British Colonial period is the largest in Sri Lanka. Located almost 3100 feet above the sea level, this 99.6ft high bridge is called “Ahas namaye palama” (Nine skies bridge) in Sinhala. When one stands underneath it and looks up there is a beautiful sight of ‘nine skies’ through the nine arches, hence the Sinhala name. This bridge is also called ‘The Bridge in the sky’ due to the sheer height. This massive bridge is built entirely of solid rocks, bricks and cement without using a single piece of steel. The bridge was finally commissioned in 1921. There is a popular story to say that when construction work was commenced on the bridge, the World War 1 broke-out and the steel consignment assigned for this site was seized and was used for war related projects. When the work came to a standstill the locals came forward and build the bridge with solid stone bricks and cement without steel. This viaduct was built at Gotuwala between the two railway stations – Ella and Demodara during the British Colonial period is the largest in Sri Lanka. Located almost 3100 feet above the sea level, this 99.6ft high bridge is called “Ahas namaye palama” (Nine skies bridge) in Sinhala. When one stands underneath it and looks up there is a beautiful sight of ‘nine skies’ through the nine arches, hence the Sinhala name. This bridge is also called ‘The Bridge in the sky’ due to the sheer height. This massive bridge is built entirely of solid rocks, bricks and cement without using a single piece of steel. The bridge was finally commissioned in 1921. There is a popular story to say that when construction work was commenced on the bridge, the World War 1 broke-out and the steel consignment assigned for this site was seized and was used for war related projects. When the work came to a standstill the locals came forward and build the bridge with solid stone bricks and cement without steel.</p>
 
-<h1>We happy?</h1>
-<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>`,
-    user: users[2],
+<h1>Day Two- Tea Plantations</h1>
+<p>Another district in the Central Province is Nuwara Eliya, best known for its tea. Due to its geo climatic attributes, Nuwara Eliya is known to produce tea of particularly fine quality. With the highest altitudes at over 6,000 ft, cool climes, and moderate rainfall the region possesses a highly conducive environment for tea cultivation. There are two seasons that arrive here namely the eastern and the western, and the climatic conditions vary from one estate to another although located short drives apart. The liqueur produced from unusually small leaves characteristic of the region, is the lightest among the regionals varieties. Among the several grades produced from Nuwara Eliya the most popular is the whole-leaf orange pekoe (OP).
+</p>`,
+    user: users[1],
     latlng: {
-      lat: 50,
-      lng: -50
+      lat: 6.876815,
+      lng: 81.060847
     },
     comments: null,
     likes: null
   },{
-    title: 'Example Post 4',
-    image: 'b6caa7a0-affd-11e6-a2f4-4d7b4c5808ce.jpeg',
-    bodyText: `<h1>I can do that</h1>
-<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
-
-<h1>We happy?</h1>
-<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>`,
+    title: 'Adams Mini Peak',
+    image: 'branch.jpg',
+    bodyText: `<h1>A Longh Day Ahead...</h1>
+<p> Our second hike in Ella was to Little Adam\`s Peak, which we did in between the two longer ones. We did this trip without a guide. It is a fairly easy hike and the path is market by signs so it\`s easy to find, and very popular among tourists! So expect to meet many other people from all over the world on this trip! On the two other more remote trips we did in Ella, we hardly met anybody, just some locals now and then. The Little Adam\'s Peak. it\`s named after it\`s big brother, the holy mountain Adam\`s Peak, because of the similar shape. Adam\`s Peak is further west in Sri Lanka, close to Nuwara Eliya, and is 2243 m high and a much more exhausting and more challenging climb! The mountain has however three names; Adam\`s Peak (this is where Adam first set foot on earth after being cast out of heaven), Sri Pada (Buddha\`s footprint left by the Buddha as he headed towards paradise) and Samanalakande (Butterfly mountain, where butterflies go to die). We had plans of climbing Big Adams Peak, but Espen hurt his knee so we settled for the “little brother” instead.</p>`,
     user: users[1],
     latlng: {
-      lat: 100,
-      lng: 100
+      lat: 6.811466,
+      lng: 80.499388
+    },
+    comments: null,
+    likes: null
+  },{
+    title: 'Hello Lombok...',
+    image: 'sunsetsri.jpg',
+    bodyText: `<h1>New horizans...</h1>
+<p>Lombok is an island in West Nusa Tenggara province, Indonesia. It forms part of the chain of the Lesser Sunda Islands, with the Lombok Strait separating it from Bali to the west and the Alas Strait between it and Sumbawa to the east. It is roughly circular, with a "tail" (Sekotong Peninsula) to the southwest, about 70 kilometres (43 miles) across and a total area of about 4,514 square kilometres (1,743 square miles). The provincial capital and largest city on the island is Mataram. It is somewhat similar in size and density with neighboring Bali and shares some cultural heritage, but is administratively part of Nusa Tenggara Barat along with sparsely populated Sumbawa. It is surrounded by a number of smaller islands locally called Gili.</p>`,
+    user: users[1],
+    latlng: {
+      lat: -8.650979,
+      lng: 116.324944
     },
     comments: null,
     likes: null
