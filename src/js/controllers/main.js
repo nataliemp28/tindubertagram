@@ -28,6 +28,7 @@ function MainController($auth, $state, $rootScope, User, $scope) {
 
   main.isLoggedIn = $auth.isAuthenticated;
   main.message = null;
+  main.bodyWhite = false;
 
   function logout() {
     $auth.logout()
@@ -44,6 +45,11 @@ function MainController($auth, $state, $rootScope, User, $scope) {
       e.preventDefault();
       $state.go('login');
       main.message = 'You must be logged in to go there!';
+    }
+    if (toState.name === 'show'){
+      main.bodyWhite = true;
+    } else {
+      main.bodyWhite = false;
     }
   }
 
@@ -62,4 +68,5 @@ function MainController($auth, $state, $rootScope, User, $scope) {
   $scope.textAreaSetup = function($element){
     $element.attr('ui-codemirror', '');
   };
+
 }
