@@ -5,13 +5,13 @@
     <title>travelApp</title>
     <link rel="stylesheet" href="/css/vendor.css">
     <link rel="stylesheet" href="/css/style.css">
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVEKU680VOtQBi2vvvVg2TNnL-TaZxiqc"
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVEKU680VOtQBi2vvvVg2TNnL-TaZxiqc&libraries=places"
   type="text/javascript"></script>
     <script src="/js/vendor.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
 
   </head>
-    <body ng-controller="MainController as main">
+    <body ng-class="{white: main.bodyWhite}" ng-controller="MainController as main">
     <header>
       <div class="mainHeader">
         <div>

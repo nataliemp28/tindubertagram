@@ -8,7 +8,9 @@ body {
   font-family: 'montserrat', sans-serif;
   font-weight: lighter;
   margin: 0;
-
+  &.white{
+    background-color: white;
+  }
 // Global Styles
 h1, h2, h3, h4, h5, h6, p{
   color: $text-black;
@@ -88,7 +90,11 @@ a{
 }
 .dragDrop{
   height: 300px;
-  background: white;
+  background: #eee;
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+  font-size: 25px;
   img{
     height: 100%;
   }
@@ -139,6 +145,9 @@ button {
   text-align: center;
   border: none;
   background-color: white;
+  h4{
+    margin-bottom: 30px;
+  }
   body {
     background-color: white !important;
   }
@@ -270,6 +279,7 @@ nav{
   }
 }
 main{
+  padding-bottom: 50px;
   padding-top: 20px;
   margin-top: 80px;
   .inputBox{
@@ -288,13 +298,51 @@ main{
         overflow: hidden;
         transition: all 1s ease;
         clear: both;
+        input{
+          width: 100%;
+          line-height: 50px;
+          font-family: 'cordalight',serif;
+          border: none;
+          border-bottom: 1.5px $main-teal solid;
+          margin-bottom: 20px;
+          &:first-child{
+            margin: 20px 0;
+          }
+        }
+        button{
+          margin: auto;
+        }
+        .bodyTextInputBox{
+          div{
+            &:first-child{
+              @include display(flex);
+              @include justify-content(center);
+              @include align-items(center);
+              margin-top: 20px;
+              button{
+                background-color: rgba(17, 157, 164 ,0.1);
+                &:hover{
+                  background-color: $main-teal;
+                }
+              }
+            }
+          }
+        }
+      }
+      span{
+        display: none;
+        cursor: pointer;
       }
       &.active {
         h3 {
           display: none;
         }
+        span{
+          display: block;
+        }
         form {
-          height: 770px;
+          height: auto;
+          min-height: 1000px;
           width: auto;
         }
       }
