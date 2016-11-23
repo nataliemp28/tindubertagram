@@ -145,6 +145,9 @@ button {
   text-align: center;
   border: none;
   background-color: white;
+  h4{
+    margin-bottom: 30px;
+  }
   body {
     background-color: white !important;
   }
@@ -296,7 +299,7 @@ main{
         transition: all 1s ease;
         clear: both;
         input{
-          width: 240px;
+          width: 100%;
           line-height: 50px;
           font-family: 'cordalight',serif;
           border: none;
@@ -338,7 +341,8 @@ main{
           display: block;
         }
         form {
-          height: 900px;
+          height: auto;
+          min-height: 1000px;
           width: auto;
         }
       }
