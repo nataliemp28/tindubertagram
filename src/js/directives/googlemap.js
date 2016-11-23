@@ -31,7 +31,7 @@ function googleMap($window, mapStyles) {
 
         marker.addListener('click', () => {
           infowindow.close();
-          infowindow.setContent(`<h6 class="infoWindowText">${post.title}</h6><p><img src="${post.image}" class="infoWindowImg"></p>
+          infowindow.setContent(`<h6 class="infoWindowText">${post.title}</h6><p><img src="${post.image}" class="infoWindowImg"></p><a href="#/posts/${post._id}">See more...</a>
         `);
 
           infowindow.open(map, marker);

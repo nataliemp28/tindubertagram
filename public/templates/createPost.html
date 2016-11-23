@@ -2,8 +2,11 @@
   <h3>Add a new post...</h3>
   <form novalidate ng-submit="createPost.create()">
     <input type="text" placeholder="Title" ng-model="createPost.post.title">
-    <input type="text" placeholder="Lat" ng-model="createPost.post.latlng.lat">
-    <input type="text" placeholder="Lng" ng-model="createPost.post.latlng.lng">
+    <div class="">
+      <input id="pac-input" ng-click="createPost.autoComplete()" type="text" value="{{ createPost.formattedLocation }}" placeholder="Location">
+      <input type="hidden" value="{{ createPost.location.lat }}" ng-model="createPost.submitLat">
+      <input type="hidden" value="{{ createPost.location.lng }}" ng-model="createPost.submitLng">
+    </div>
     <drag-drop base64="createPost.post.base64" src="createPost.post.image"></drag-drop>
     <div class='bodyTextInputBox' ta-toolbar="[['h1','h2','h3']]" text-angular ng-model="createPost.post.bodyText"></div>
     <button>Submit</button>
