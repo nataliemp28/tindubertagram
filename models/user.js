@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
   firstName: { type: String},
   lastName: { type: String},
   bio: { type: String, minlength: 5, maxlength: 140 },
-  image: { type: String},
+  image: { type: String, get: addImagePath, set: removeImagePath },
   facebookId: { type: String },
   instagramId: { type: String },
   passwordHash: { type: String },
@@ -26,6 +26,15 @@ function setPasswordConfirmation(passwordConfirmation) {
 
 function validatePassword(password){
   return bcrypt.compareSync(password, this.passwordHash);
+}
+
+function addImagePath(image){
+  if (!image) return null;
+  return `https://s3-eu-west-1.amazonaws.com/ga-travel-app/${image}`;
+}
+
+function removeImagePath(fullPath){
+  return fullPath.split('/').splice(-1)[0];
 }
 
 userSchema

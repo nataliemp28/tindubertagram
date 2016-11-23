@@ -14,7 +14,7 @@ User.create([{
   firstName: 'Oli',
   lastName: 'Moore',
   bio: 'I love da cheese',
-  image: 'https://s3-eu-west-1.amazonaws.com/ga-travel-app/0a6e2580-b003-11e6-a2f4-4d7b4c5808ce.png',
+  image: 'oli.jpg',
   password: 'password',
   passwordConfirmation: 'password'
 },{
@@ -22,7 +22,7 @@ User.create([{
   firstName: 'thea',
   lastName: 'Carter',
   bio: 'I love da cheese too',
-  image: 'https://s3-eu-west-1.amazonaws.com/ga-travel-app/0a6e2580-b003-11e6-a2f4-4d7b4c5808ce.png',
+  image: 'thea.jpg',
   password: 'password',
   passwordConfirmation: 'password'
 },{
@@ -30,7 +30,7 @@ User.create([{
   firstName: 'nat',
   lastName: 'Pateman',
   bio: 'I also love da cheese',
-  image: 'https://s3-eu-west-1.amazonaws.com/ga-travel-app/0a6e2580-b003-11e6-a2f4-4d7b4c5808ce.png',
+  image: 'nat.jpg',
   password: 'password',
   passwordConfirmation: 'password'
 }], (err, users) => {
