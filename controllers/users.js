@@ -23,7 +23,7 @@ function posts(req, res) {
 
 // PUBLIC FEED
 function feed(req, res) {
-  // Getting User by current user id, current user id is being attached to req by secureRoutes
+  // Getting User by current user id, current user id is being attached to request by secureRoutes
   User.findById(req.user._id, (err, user) => {
     if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
     const userIds = user.following;
@@ -42,7 +42,7 @@ function feed(req, res) {
 
 // Toggle following
 function toggleFollowing(req, res) {
-  // Getting User by current user id, current user id is being attached to req by secureRoutes
+  // Getting User by current user id, current user id is being attached to request by secureRoutes
   User.findById(req.user._id, (err, user) => {
     if (err) return res.status(500).json({ messsage: 'Something went wrong.', error: err });
     if (!user) return res.status(404).json({ message: 'No user found.' });

@@ -174,7 +174,7 @@ User.create([{
   },{
     title: 'Hello Lombok...',
     image: 'sunsetsri.jpg',
-    bodyText: `<h1>New horizans...</h1>
+    bodyText: `<h1>New horizons...</h1>
 <p>Lombok is an island in West Nusa Tenggara province, Indonesia. It forms part of the chain of the Lesser Sunda Islands, with the Lombok Strait separating it from Bali to the west and the Alas Strait between it and Sumbawa to the east. It is roughly circular, with a "tail" (Sekotong Peninsula) to the southwest, about 70 kilometres (43 miles) across and a total area of about 4,514 square kilometres (1,743 square miles). The provincial capital and largest city on the island is Mataram. It is somewhat similar in size and density with neighboring Bali and shares some cultural heritage, but is administratively part of Nusa Tenggara Barat along with sparsely populated Sumbawa. It is surrounded by a number of smaller islands locally called Gili.</p>`,
     user: users[1],
     latlng: {
