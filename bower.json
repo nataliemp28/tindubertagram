@@ -1,12 +1,12 @@
 {
-  "name": "wdi23-project3",
+  "name": "project-2-trail",
   "description": "",
   "main": "app.js",
   "authors": [
     "moorow <olimoorow@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/moorow/tindubertagram",
+  "homepage": "https://github.com/nataliemp28/tindubertagram",
   "ignore": [
     "**/.*",
     "node_modules",
