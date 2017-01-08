@@ -13,7 +13,7 @@ User.create([{
   email: 'oli@test.com',
   firstName: 'Oli',
   lastName: 'Moore',
-  bio: 'I love da cheese',
+  bio: 'Travel loving coding genius',
   image: 'oli.jpg',
   password: 'password',
   passwordConfirmation: 'password'
@@ -21,7 +21,7 @@ User.create([{
   email: 'thea@test.com',
   firstName: 'Thea',
   lastName: 'Carter',
-  bio: 'I love da cheese too',
+  bio: 'Travel loving actress',
   image: 'thea.jpg',
   password: 'password',
   passwordConfirmation: 'password'
@@ -29,7 +29,7 @@ User.create([{
   email: 'nat@test.com',
   firstName: 'Nat',
   lastName: 'Pateman',
-  bio: 'I also love da cheese',
+  bio: 'Travel loving Kiwi',
   image: 'nat.jpg',
   password: 'password',
   passwordConfirmation: 'password'
@@ -38,13 +38,14 @@ User.create([{
   if(err) return console.log(err);
 
   Post.create([{
-    title: 'Ranch',
+    title: 'Santorini Holiday',
     image: 'Horse-Contrast.jpg',
-    bodyText: `<h1>I can do that</h1>
-<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
+    bodyText: `<h1>Horsing Around - I can do that</h1>
+<p>Santorini is one of the Cyclades islands in the Aegean Sea. It was devastated by a volcanic eruption in the 16th century BC, forever shaping its rugged landscape. The whitewashed, cubiform houses of its 2 principal towns, Fira and Oia, cling to cliffs above an underwater caldera (crater). They overlook the sea, small islands to the west and beaches made up of black, red and white lava pebbles.</p>
 
-<h1>We happy?</h1>
-<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>`,
+<h1>Economy</h1>
+<p>Santorini's primary industry is tourism. The two main sources of wealth in Santorini are agriculture and tourism. In recent years, Santorini has been voted one of the world's most beautiful islands (2015 Travelers” Choice Awards Reader's Choice Awards, amongst others).
+Santorini remains the home of a small, but flourishing wine industry, based on the indigenous Assyrtiko grape variety. White varieties also include Athiri and Aidani, whereas red varieties include mavrotragano and mandilaria.</p>`,
     user: users[0],
     latlng: {
       lat: 50,
@@ -56,11 +57,11 @@ User.create([{
   {
     title: 'India',
     image: 'Indian_Man_in-_Window.jpg',
-    bodyText: `<h1>I can do that</h1>
-<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
+    bodyText: `<h1>Indian trekking</h1>
+<p>India is a vast South Asian country with diverse terrain – from Himalayan peaks to Indian Ocean coastline – and history reaching back 5 millennia. In the north, Mughal Empire landmarks include Delhi’s Red Fort complex and massive Jama Masjid mosque, plus Agra’s iconic Taj Mahal mausoleum. Pilgrims bathe in the Ganges in Varanasi, and Rishikesh is a yoga centre and base for Himalayan trekking.</p>
 
-<h1>We happy?</h1>
-<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>`,
+<h1>Coastline</h1>
+<p>India's coastline measures 7,517 kilometres (4,700 mi) in length; of this distance, 5,423 kilometres (3,400 mi) belong to peninsular India and 2,094 kilometres (1,300 mi) to the Andaman, Nicobar, and Lakshadweep island chains.[130] According to the Indian naval hydrographic charts, the mainland coastline consists of the following: 43% sandy beaches; 11% rocky shores, including cliffs; and 46% mudflats or marshy shores.</p>`,
     user: users[0],
     latlng: {
       lat: 50,
@@ -186,11 +187,11 @@ User.create([{
   },{
     title: 'Ethiopia',
     image: 'Ethiopia_Storm.jpg',
-    bodyText: `<h1>I can do that</h1>
-<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
+    bodyText: `<h1>Horn of Africa</h1>
+<p>Ethiopia, in the Horn of Africa, is a rugged, landlocked country split by the Great Rift Valley. With archaeological finds dating back more than 3 million years, it’s a place of ancient culture. Among its important sites are Lalibela with its rock-cut Christian churches from the 12th–13th centuries. Aksum is the ruins of an ancient city with obelisks, tombs, castles and Our Lady Mary of Zion church.</p>
 
-<h1>We happy?</h1>
-<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>`,
+<h1>Coffee</h1>
+<p>Ethiopia is the place of origin for the coffee bean which originated from the place called Kefa (which was one of the 14 provinces in the old Ethiopian administration). It is a land of natural contrasts, with its vast fertile West, jungles, and numerous rivers, and the world's hottest settlement of Dallol in its north. The Ethiopian Highlands are Africa's largest continuous mountain ranges, and Sof Omar Caves contain Africa's largest cave. Ethiopia has the most UNESCO World Heritage Sites in Africa</p>`,
     user: users[0],
     latlng: {
       lat: 51.51,
